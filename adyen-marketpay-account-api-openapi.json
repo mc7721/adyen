@@ -1,0 +1,1663 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "5",
+        "title": "Adyen MarketPay Account API",
+        "description": "The MarketPay Account API provides endpoints for managing MarketPay account-related entities. These related entities include account holders, accounts, bank accounts, shareholders, and KYC-related documents. The management operations include actions such as creation, retrieval, updating, and deletion of them.\n\nFor further information on MarketPay API, visit the [MarketPay documentation](https:\/\/docs.adyen.com\/marketpay).\n## Authentication\nTo connect to the MarketPay API, you must use basic authentication credentials of your web service user. If you don't have one, please contact the [Adyen Support Team](https:\/\/support.adyen.com\/hc\/en-us\/requests\/new). Then use its credentials to authenticate your request, for example:\n\n```\ncurl\n-U \"ws@MarketPlace.YourMarketPlace\":\"YourWsPassword\" \\\n-H \"Content-Type: application\/json\" \\\n...\n```\nNote that when going live, you need to generate new web service user credentials to access the [live endpoints](https:\/\/docs.adyen.com\/development-resources\/liv",
+        "termsOfService": "https:\/\/www.adyen.com\/legal\/terms-and-conditions"
+    },
+    "servers": [
+        "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5"
+    ],
+    "paths": {
+        "\/checkAccountHolder": {
+            "post": {
+                "summary": "Request to perform verification for an account holder.",
+                "description": "This endpoint allows to trigger the verification of the account holder earlier than it's required by the currently processed volume.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/closeAccount": {
+            "post": {
+                "summary": "Close an existing account under an account holder.",
+                "description": "This endpoint is used to close an existing account under an account holder. If an account is closed, it may not process transactions or have its funds paid out,and it may not be reopened. Any payments made to a closed account will be directed to the merchant's liable account.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/closeAccountHolder": {
+            "post": {
+                "summary": "Close an existing account holder.",
+                "description": "This endpoint is used to close an existing account holder and its accounts. If an account holder is closed, it may not process transactions or pay out funds, and it may not be reopened. Any payments made to a closed account will be directed to the merchant's liable account.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/createAccount": {
+            "post": {
+                "summary": "Create a new account under an existing account holder.",
+                "description": "This endpoint is used to create an account under an existing account holder. An account holder may have multiple accounts.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/createAccountHolder": {
+            "post": {
+                "summary": "Create a new account holder.",
+                "description": "This endpoint is used to create an account holder. Each account holder represents a single sub-merchant, and each sub-merchant must be represented by an account holder. Depending on the legal entity type, different details are required to be provided in the call to this endpoint.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/deleteBankAccounts": {
+            "post": {
+                "summary": "Delete bank accounts of an existing account holder.",
+                "description": "This endpoint is used to delete existing bank accounts from an account holder. For this, pass the `accountHolderCode` you got on the account holder creation, and one or more `bankAccountUUIDs` specifying bank accounts to delete.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/deletePayoutMethods": {
+            "post": {
+                "summary": "Delete payout methods of an existing account holder.",
+                "description": "This endpoint is used to delete existing payout method from an account holder. For this, pass the `accountHolderCode` you got on the account holder creation, and one or more `payoutMethodCodes` specifying payout methods to delete.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/deleteShareholders": {
+            "post": {
+                "summary": "Delete shareholders of an existing account holder.",
+                "description": "This endpoint is used to delete existing shareholders from an account holder.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/getAccountHolder": {
+            "post": {
+                "summary": "Retrieve the details of an account holder.",
+                "description": "This endpoint is used to retrieve the details of an account holder.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/getUploadedDocuments": {
+            "post": {
+                "summary": "Retrieve the uploaded documents of an existing account holder.",
+                "description": "This endpoint is used to retrieve documents previously uploaded for use in the KYC Verification of an account holder.\n\nFor further information regarding KYC Verification, please refer to [Verification checks](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/suspendAccountHolder": {
+            "post": {
+                "summary": "Suspend an existing account holder.",
+                "description": "This endpoint is used to suspend an existing account holder. If an account holder is suspended, it may not process transactions or pay out funds. Any payments made to a suspended account holder will be directed to the merchant's liable account.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/unSuspendAccountHolder": {
+            "post": {
+                "summary": "Reinstate a disabled account holder.",
+                "description": "This endpoint is used to reinstate an existing account holder, which has been suspended through the `\/suspendAccountHolder` endpoint. An account holder which has been suspended due to KYC verification issues cannot be reinstated through this endpoint.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/updateAccount": {
+            "post": {
+                "summary": "Update an existing account under an account holder.",
+                "description": "This endpoint is used to update the description or payout schedule of an existing account.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/updateAccountHolder": {
+            "post": {
+                "summary": "Update an existing account holder.",
+                "description": "This endpoint is used to update the `accountHolderDetails` or `processingTier` of an account holder.\n\nIf updating the `accountHolderDetails`, only the details which have been provided will be updated. Other details will be left as-is with the exception of the following fields:\n* `accountHolderDetails.address`\n* `accountHolderDetails.fullPhoneNumber`\n* `accountHolderDetails.bankAccountDetails.BankAccountDetail`\n* `accountHolderDetails.businessDetails.shareholders.ShareholderContact`, which requir",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/updateAccountHolderState": {
+            "post": {
+                "summary": "Update the state of an existing account holder.",
+                "description": "This endpoint is used to disable or enable the processing or payout state of an account holder. It cannot be used to enable an account holder whose processing or payout state has not been disabled through this endpoint.\n\nFor further information regarding processing and payout states of an account holder, please refer to the [MarketPay documentation](https:\/\/docs.adyen.com\/marketpay).",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/uploadDocument": {
+            "post": {
+                "summary": "Upload a document for an existing account holder.",
+                "description": "This endpoint is used to upload a document for use in the KYC verification of an account holder.\n\nFor further information regarding KYC Verification, please refer to [Verification checks](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Account": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    },
+                    "beneficiaryAccount": {
+                        "description": "The beneficiary of the account.",
+                        "type": "string"
+                    },
+                    "beneficiaryMerchantReference": {
+                        "description": "The reason that a beneficiary has been set up for this account. This may have been supplied during the setup of a beneficiary at the discretion of the executing user.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
+                        "type": "object"
+                    },
+                    "payoutSchedule": {
+                        "description": "The account's payout schedule.",
+                        "type": ""
+                    },
+                    "status": {
+                        "description": "The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "metadata": {
+                "type": "object"
+            },
+            "payoutSchedule": {
+                "type": "object"
+            },
+            "AccountEvent": {
+                "type": "object",
+                "properties": {
+                    "event": {
+                        "description": "The event.\n>Permitted values: `InactivateAccount`, `RefundNotPaidOutTransfers`.\nFor more information, refer to [Verification checks](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
+                        "type": "string"
+                    },
+                    "executionDate": {
+                        "description": "The date on which the event will take place.",
+                        "type": "string"
+                    },
+                    "reason": {
+                        "description": "The reason why this event has been created.",
+                        "type": "string"
+                    }
+                }
+            },
+            "AccountHolderDetails": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "The address of the account holder.",
+                        "type": ""
+                    },
+                    "bankAccountDetails": {
+                        "description": "Each of the bank accounts associated with the account holder.\n> Each array entry should represent one bank account.\n> For comprehensive detail regarding the required `BankAccountDetail` fields, please refer to the [KYC Verification documentation](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
+                        "type": "array"
+                    },
+                    "businessDetails": {
+                        "description": "Details applicable to `Business` legal entities.\nPopulated only if the account holder's legal entity is of type `Business`.\n> Required when being used in a `\/createAccountHolder` request in which the legal entity is `Business`.",
+                        "type": ""
+                    },
+                    "email": {
+                        "description": "The email address of the account holder.",
+                        "type": "string"
+                    },
+                    "fullPhoneNumber": {
+                        "description": "The phone number of the account holder provided as a single string. It will be handled as a landline phone.\n**Examples:** \"0031 6 11 22 33 44\", \"+316\/1122-3344\", \"(0031) 611223344\"",
+                        "type": "string"
+                    },
+                    "individualDetails": {
+                        "description": "Details applicable to `Individual` legal entities.\nPopulated only if the account holder's legal entity is of type `Individual`.\n> Required when being used in a `\/createAccountHolder` request in which the legal entity is `Individual`.",
+                        "type": ""
+                    },
+                    "merchantCategoryCode": {
+                        "description": "The Merchant Category Code of the account holder.\n> If not specified in the request, this will be derived from the platform account (which is configured by Adyen).",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
+                        "type": "object"
+                    },
+                    "payoutMethods": {
+                        "description": "Each of the card tokens associated with the account holder.\n> Each array entry should represent one card token.\n> For comprehensive detail regarding the required `CardToken` fields, please refer to the [KYC Verification documentation](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
+                        "type": "array"
+                    },
+                    "webAddress": {
+                        "description": "The URL of the website of the account holder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "address": {
+                "type": "object"
+            },
+            "bankAccountDetails": {
+                "type": "array"
+            },
+            "businessDetails": {
+                "type": "object",
+                "properties": {
+                    "doingBusinessAs": {
+                        "description": "The registered name of the company (if it differs from the legal name of the company).",
+                        "type": "string"
+                    },
+                    "incorporatedAt": {
+                        "description": "The jurisdiction of incorporation of the company. \n>Two (2) characters for a business in the USA or Canada, or a maximum of three (3) characters for an address in all other countries, or 'FEDERAL'",
+                        "type": "string"
+                    },
+                    "legalBusinessName": {
+                        "description": "The legal name of the company.",
+                        "type": "string"
+                    },
+                    "registrationNumber": {
+                        "description": "The registration number of the company.",
+                        "type": "string"
+                    },
+                    "shareholders": {
+                        "description": "Each of the shareholders associated with the company.\nEach array entry should represent one shareholder.",
+                        "type": "array"
+                    },
+                    "taxId": {
+                        "description": "The tax ID number.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    }
+                }
+            },
+            "individualDetails": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "The name of the individual.\n>Make sure your account holder registers using the name shown on their Photo ID.",
+                        "type": ""
+                    },
+                    "personalData": {
+                        "description": "Personal information of the individual.",
+                        "type": ""
+                    }
+                }
+            },
+            "payoutMethods": {
+                "type": "array"
+            },
+            "AccountHolderStatus": {
+                "type": "object",
+                "properties": {
+                    "events": {
+                        "description": "A list of events scheduled for the account holder.",
+                        "type": "array"
+                    },
+                    "payoutState": {
+                        "description": "The payout state of the account holder.",
+                        "type": ""
+                    },
+                    "processingState": {
+                        "description": "The processing state of the account holder.",
+                        "type": ""
+                    },
+                    "status": {
+                        "description": "The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.",
+                        "type": "string"
+                    },
+                    "statusReason": {
+                        "description": "The reason why the status was assigned to the account holder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "events": {
+                "type": "array"
+            },
+            "payoutState": {
+                "type": "object"
+            },
+            "processingState": {
+                "type": "object"
+            },
+            "AccountPayoutState": {
+                "type": "object",
+                "properties": {
+                    "allowPayout": {
+                        "description": "Indicates whether payouts are allowed. This field is the overarching payout status, and is the aggregate of multiple conditions (e.g., KYC status, disabled flag, etc). If this field is false, no payouts will be permitted for any of the account holder's accounts. If this field is true, payouts will be permitted for any of the account holder's accounts.",
+                        "type": "boolean"
+                    },
+                    "disableReason": {
+                        "description": "The reason why payouts (to all of the account holder's accounts) have been disabled (by the platform). If the `disabled` field is true, this field can be used to explain why.",
+                        "type": "string"
+                    },
+                    "disabled": {
+                        "description": "Indicates whether payouts have been disabled (by the platform) for all of the account holder's accounts. A platform may enable and disable this field at their discretion. If this field is true, `allowPayout` will be false and no payouts will be permitted for any of the account holder's accounts. If this field is false, `allowPayout` may or may not be enabled, depending on other factors.",
+                        "type": "boolean"
+                    },
+                    "notAllowedReason": {
+                        "description": "The reason why payouts (to all of the account holder's accounts) have been disabled (by Adyen). If payouts have been disabled by Adyen, this field will explain why. If this field is blank, payouts have not been disabled by Adyen.",
+                        "type": "string"
+                    },
+                    "payoutLimit": {
+                        "description": "The maximum amount that payouts are limited to. Only applies if payouts are allowed but limited.",
+                        "type": ""
+                    },
+                    "tierNumber": {
+                        "description": "The payout tier that the account holder occupies.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "payoutLimit": {
+                "type": "object"
+            },
+            "AccountProcessingState": {
+                "type": "object",
+                "properties": {
+                    "disableReason": {
+                        "description": "The reason why payouts (to all of the account holder's accounts) have been disabled (by the platform). If the `disabled` field is true, this field can be used to explain why.",
+                        "type": "string"
+                    },
+                    "disabled": {
+                        "description": "Indicates whether payouts have been disabled (by the platform) for all of the account holder's accounts. A platform may enable and disable this field at their discretion. If this field is true, `allowPayout` will be false and no payouts will be permitted for any of the account holder's accounts. If this field is false, `allowPayout` may or may not be enabled, depending on other factors.",
+                        "type": "boolean"
+                    },
+                    "processedFrom": {
+                        "description": "The lower bound of the processing tier (i.e., an account holder must have processed at least this amount of money in order to be placed into this tier).",
+                        "type": ""
+                    },
+                    "processedTo": {
+                        "description": "The upper bound of the processing tier (i.e., an account holder must have processed less than this amount of money in order to be placed into this tier).",
+                        "type": ""
+                    },
+                    "tierNumber": {
+                        "description": "The payout tier that the account holder occupies.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "processedFrom": {
+                "type": "object"
+            },
+            "processedTo": {
+                "type": "object"
+            },
+            "Amount": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The payable amount that can be charged for the transaction.\n\nThe transaction amount needs to be represented in minor units according to the [following table](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "integer"
+                    }
+                }
+            },
+            "BankAccountDetail": {
+                "type": "object",
+                "properties": {
+                    "accountNumber": {
+                        "description": "The bank account number (without separators).\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "accountType": {
+                        "description": "The type of bank account.\nOnly applicable to bank accounts held in the USA.\nThe permitted values are: `checking`, `savings`.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "bankAccountName": {
+                        "description": "The name of the bank account.",
+                        "type": "string"
+                    },
+                    "bankAccountReference": {
+                        "description": "Merchant reference to the bank account.",
+                        "type": "string"
+                    },
+                    "bankAccountUUID": {
+                        "description": "The unique identifier (UUID) of the Bank Account.\n>If, during an account holder create or update request, this field is left blank (but other fields provided), a new Bank Account will be created with a procedurally-generated UUID.\n\n>If, during an account holder create request, a UUID is provided, the creation of the Bank Account will fail while the creation of the account holder will continue.\n\n>If, during an account holder update request, a UUID that is not correlated with an existing Bank Account is provided, the update of the account holder will fail.\n\n>If, during an account holder update request, a UUID that is correlated with an existing Bank Account is provided, the existing Bank Account will be updated.\n",
+                        "type": "string"
+                    },
+                    "bankBicSwift": {
+                        "description": "The bank identifier code.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "bankCity": {
+                        "description": "The city in which the bank branch is located.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "bankCode": {
+                        "description": "The bank code of the banking institution with which the bank account is registered.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "bankName": {
+                        "description": "The name of the banking institution with which the bank account is held.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "branchCode": {
+                        "description": "The branch code of the branch under which the bank account is registered. The value to be specified in this parameter depends on the country of the bank account:\n* United States - Routing number\n* United Kingdom - Sort code\n* Germany - Bankleitzahl\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "checkCode": {
+                        "description": "The check code of the bank account.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "countryCode": {
+                        "description": "The two-letter country code in which the bank account is registered.\n>The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "currencyCode": {
+                        "description": "The currency in which the bank account deals.\n>The permitted currency codes are defined in ISO-4217 (e.g. 'EUR').\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "iban": {
+                        "description": "The international bank account number.\n>The IBAN standard is defined in ISO-13616.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerCity": {
+                        "description": "The city of residence of the bank account owner.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerCountryCode": {
+                        "description": "The country code of the country of residence of the bank account owner.\n>The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerDateOfBirth": {
+                        "description": "The date of birth of the bank account owner.\n",
+                        "type": "string"
+                    },
+                    "ownerHouseNumberOrName": {
+                        "description": "The house name or number of the residence of the bank account owner.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerName": {
+                        "description": "The name of the bank account owner.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerNationality": {
+                        "description": "The country code of the country of nationality of the bank account owner.\n>The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerPostalCode": {
+                        "description": "The postal code of the residence of the bank account owner.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerState": {
+                        "description": "The state of residence of the bank account owner.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "ownerStreet": {
+                        "description": "The street name of the residence of the bank account owner.\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "primaryAccount": {
+                        "description": "If set to true, the bank account is a primary account.",
+                        "type": "boolean"
+                    },
+                    "taxId": {
+                        "description": "The tax ID number.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    },
+                    "urlForVerification": {
+                        "description": "The URL to be used for bank account verification.\nThis may be generated on bank account creation.\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on field requirements.",
+                        "type": "string"
+                    }
+                }
+            },
+            "shareholders": {
+                "type": "array"
+            },
+            "CloseAccountHolderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CloseAccountHolderResponse": {
+                "type": "object",
+                "properties": {
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "accountHolderStatus": {
+                "type": "object"
+            },
+            "invalidFields": {
+                "type": "array"
+            },
+            "CloseAccountRequest": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CloseAccountResponse": {
+                "type": "object",
+                "properties": {
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateAccountHolderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountHolderDetails": {
+                        "description": "The details of the prospective account holder.",
+                        "type": ""
+                    },
+                    "createDefaultAccount": {
+                        "description": "If set to true, an account with the default options is created for this account holder.\n**Default Value:** true",
+                        "type": "boolean"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "legalEntity": {
+                        "description": "The entity type.\nPermitted values: `Business`, `Individual`\n\nIf an account holder is 'Business', then `accountHolderDetails.businessDetails` must be provided, as well as at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.\n\nIf an account holder is 'Individual', then `accountHolderDetails.individualDetails` must be provided.",
+                        "type": "string"
+                    },
+                    "primaryCurrency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes), with which the prospective account holder primarily deals.",
+                        "type": "string"
+                    },
+                    "processingTier": {
+                        "description": "The starting [processing tier](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks#tiers) for the prospective account holder.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "accountHolderDetails": {
+                "type": "object"
+            },
+            "CreateAccountHolderResponse": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    },
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountHolderDetails": {
+                        "description": "The details of the prospective account holder.",
+                        "type": ""
+                    },
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "legalEntity": {
+                        "description": "The entity type.\nPermitted values: `Business`, `Individual`\n\nIf an account holder is 'Business', then `accountHolderDetails.businessDetails` must be provided, as well as at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.\n\nIf an account holder is 'Individual', then `accountHolderDetails.individualDetails` must be provided.",
+                        "type": "string"
+                    },
+                    "primaryCurrency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes), with which the prospective account holder primarily deals.",
+                        "type": "string"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    },
+                    "verification": {
+                        "description": "The details of KYC Verification of the account holder.",
+                        "type": ""
+                    }
+                }
+            },
+            "verification": {
+                "type": "object"
+            },
+            "CreateAccountRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
+                        "type": "object"
+                    },
+                    "payoutSchedule": {
+                        "description": "The payout schedule of the prospective account.\n>Permitted values: `DEFAULT`, `HOLD`, `DAILY`, `WEEKLY`, `MONTHLY`.",
+                        "type": "string"
+                    },
+                    "payoutScheduleReason": {
+                        "description": "The reason for the payout schedule choice.\n>Required if the payoutSchedule is `HOLD`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateAccountResponse": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    },
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "metadata": {
+                        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
+                        "type": "object"
+                    },
+                    "payoutSchedule": {
+                        "description": "The account's payout schedule.",
+                        "type": ""
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "DeleteBankAccountRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "bankAccountUUIDs": {
+                        "description": "The code(s) of the Bank Accounts to be deleted.",
+                        "type": "array"
+                    }
+                }
+            },
+            "bankAccountUUIDs": {
+                "type": "array"
+            },
+            "DeletePayoutMethodRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "payoutMethodCodes": {
+                        "description": "The codes of the payout methods to be deleted.",
+                        "type": "array"
+                    }
+                }
+            },
+            "payoutMethodCodes": {
+                "type": "array"
+            },
+            "DeleteShareholderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "shareholderCodes": {
+                        "description": "The code(s) of the Shareholders to be deleted.",
+                        "type": "array"
+                    }
+                }
+            },
+            "shareholderCodes": {
+                "type": "array"
+            },
+            "DocumentDetail": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "bankAccountUUID": {
+                        "description": "The unique identifier (UUID) of the Bank Account.\n>If, during an account holder create or update request, this field is left blank (but other fields provided), a new Bank Account will be created with a procedurally-generated UUID.\n\n>If, during an account holder create request, a UUID is provided, the creation of the Bank Account will fail while the creation of the account holder will continue.\n\n>If, during an account holder update request, a UUID that is not correlated with an existing Bank Account is provided, the update of the account holder will fail.\n\n>If, during an account holder update request, a UUID that is correlated with an existing Bank Account is provided, the existing Bank Account will be updated.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "documentType": {
+                        "description": "The type of a document. Permitted values:\n* `BANK_STATEMENT` denotes an image containing a bank statement or other document proving ownership of a specific bank account.\n* `PASSPORT` denotes an image containing the identity page(s) of a passport.\n* `ID_CARD_FRONT` denotes an image containing only the front of the ID card. In order for a document to be usable, both the `ID_CARD_FRONT` and `ID_CARD_BACK` must be submitted.\n* `ID_CARD_BACK` denotes an image containing only the back of the ID card. In order for a document to be usable, both the `ID_CARD_FRONT` and `ID_CARD_BACK` must be submitted.\n* `DRIVING_LICENCE_FRONT` denotes an image containing only the front of the driving licence. In order for a document to be usable, both the `DRIVING_LICENCE_FRONT` and `DRIVING_LICENCE_BACK` must be submitted.\n* `DRIVING_LICENCE_BACK` denotes an image containing only the back of the driving licence. In order for a document to be usable, both the `DRIVING_LICENCE_FRONT` and `DRIVING_LICENCE_FRONT` must be submitted.\n\n>Please refer to [Verification checks](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks) for details on when each document type should be submitted.",
+                        "type": "string"
+                    },
+                    "filename": {
+                        "description": "Filename of the document.",
+                        "type": "string"
+                    },
+                    "shareholderCode": {
+                        "description": "The code of the shareholder, to which the document applies.\n>Required if the account holder referred to by the `accountHolderCode` has a `legalEntity` of type `Business` and the `documentType` is either `PASSPORT`, `ID_CARD_FRONT`, `ID_CARD_BACK`, `DRIVING_LICENCE_FRONT`, `DRIVING_LICENCE_BACK` (i.e. a document is being submitted in order to verify a shareholder).\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on when a document should be submitted in order to verify a shareholder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ErrorFieldType": {
+                "type": "object",
+                "properties": {
+                    "errorCode": {
+                        "description": "The validation error code.",
+                        "type": "integer"
+                    },
+                    "errorDescription": {
+                        "description": "A description of the validation error.",
+                        "type": "string"
+                    },
+                    "fieldType": {
+                        "description": "The type of error field.",
+                        "type": ""
+                    }
+                }
+            },
+            "fieldType": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "description": "The full name of the property.",
+                        "type": "string"
+                    },
+                    "fieldName": {
+                        "description": "The type of the field.",
+                        "type": "string"
+                    },
+                    "shareholderCode": {
+                        "description": "The code of the shareholder, to which the document applies.\n>Required if the account holder referred to by the `accountHolderCode` has a `legalEntity` of type `Business` and the `documentType` is either `PASSPORT`, `ID_CARD_FRONT`, `ID_CARD_BACK`, `DRIVING_LICENCE_FRONT`, `DRIVING_LICENCE_BACK` (i.e. a document is being submitted in order to verify a shareholder).\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on when a document should be submitted in order to verify a shareholder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "GenericResponse": {
+                "type": "object",
+                "properties": {
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "GetAccountHolderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    },
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "showDetails": {
+                        "description": "True if the request should return the account holder details",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "GetAccountHolderResponse": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountHolderDetails": {
+                        "description": "The details of the prospective account holder.",
+                        "type": ""
+                    },
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "accounts": {
+                        "description": "A list of the accounts under the account holder.",
+                        "type": "array"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "legalEntity": {
+                        "description": "The entity type.\nPermitted values: `Business`, `Individual`\n\nIf an account holder is 'Business', then `accountHolderDetails.businessDetails` must be provided, as well as at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.\n\nIf an account holder is 'Individual', then `accountHolderDetails.individualDetails` must be provided.",
+                        "type": "string"
+                    },
+                    "primaryCurrency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes), with which the prospective account holder primarily deals.",
+                        "type": "string"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    },
+                    "systemUpToDateTime": {
+                        "description": "The time that shows how up to date is the information in the response.",
+                        "type": "string"
+                    },
+                    "verification": {
+                        "description": "The details of KYC Verification of the account holder.",
+                        "type": ""
+                    }
+                }
+            },
+            "accounts": {
+                "type": "array"
+            },
+            "GetAccountHolderStatusResponse": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "GetUploadedDocumentsRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "bankAccountUUID": {
+                        "description": "The unique identifier (UUID) of the Bank Account.\n>If, during an account holder create or update request, this field is left blank (but other fields provided), a new Bank Account will be created with a procedurally-generated UUID.\n\n>If, during an account holder create request, a UUID is provided, the creation of the Bank Account will fail while the creation of the account holder will continue.\n\n>If, during an account holder update request, a UUID that is not correlated with an existing Bank Account is provided, the update of the account holder will fail.\n\n>If, during an account holder update request, a UUID that is correlated with an existing Bank Account is provided, the existing Bank Account will be updated.\n",
+                        "type": "string"
+                    },
+                    "shareholderCode": {
+                        "description": "The code of the shareholder, to which the document applies.\n>Required if the account holder referred to by the `accountHolderCode` has a `legalEntity` of type `Business` and the `documentType` is either `PASSPORT`, `ID_CARD_FRONT`, `ID_CARD_BACK`, `DRIVING_LICENCE_FRONT`, `DRIVING_LICENCE_BACK` (i.e. a document is being submitted in order to verify a shareholder).\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on when a document should be submitted in order to verify a shareholder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "GetUploadedDocumentsResponse": {
+                "type": "object",
+                "properties": {
+                    "documentDetails": {
+                        "description": "A list of the documents and their details.",
+                        "type": "array"
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "documentDetails": {
+                "type": "array"
+            },
+            "name": {
+                "type": "object"
+            },
+            "personalData": {
+                "type": "object"
+            },
+            "KYCBankAccountCheckResult": {
+                "type": "object",
+                "properties": {
+                    "bankAccountUUID": {
+                        "description": "The unique identifier (UUID) of the Bank Account.\n>If, during an account holder create or update request, this field is left blank (but other fields provided), a new Bank Account will be created with a procedurally-generated UUID.\n\n>If, during an account holder create request, a UUID is provided, the creation of the Bank Account will fail while the creation of the account holder will continue.\n\n>If, during an account holder update request, a UUID that is not correlated with an existing Bank Account is provided, the update of the account holder will fail.\n\n>If, during an account holder update request, a UUID that is correlated with an existing Bank Account is provided, the existing Bank Account will be updated.\n",
+                        "type": "string"
+                    },
+                    "checks": {
+                        "description": "A list of the checks and their statuses.",
+                        "type": "array"
+                    }
+                }
+            },
+            "checks": {
+                "type": "array"
+            },
+            "KYCCheckResult": {
+                "type": "object",
+                "properties": {
+                    "checks": {
+                        "description": "A list of the checks and their statuses.",
+                        "type": "array"
+                    }
+                }
+            },
+            "KYCCheckStatusData": {
+                "type": "object",
+                "properties": {
+                    "requiredFields": {
+                        "description": "A list of the fields required for execution of the check.",
+                        "type": "array"
+                    },
+                    "status": {
+                        "description": "The status of the account. Possible values: `Active`, `Inactive`, `Suspended`, `Closed`.",
+                        "type": "string"
+                    },
+                    "summary": {
+                        "description": "A summary of the execution of the check.",
+                        "type": ""
+                    },
+                    "type": {
+                        "description": "The type of check.\n>Permitted Values: `COMPANY_VERIFICATION`, `IDENTITY_VERIFICATION`, `PASSPORT_VERIFICATION`, `BANK_ACCOUNT_VERIFICATION`, `NONPROFIT_VERIFICATION`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "requiredFields": {
+                "type": "array"
+            },
+            "summary": {
+                "type": "object"
+            },
+            "KYCCheckSummary": {
+                "type": "object",
+                "properties": {
+                    "kycCheckCode": {
+                        "description": "The code of the check.",
+                        "type": "integer"
+                    },
+                    "kycCheckDescription": {
+                        "description": "A description of the check.",
+                        "type": "string"
+                    }
+                }
+            },
+            "KYCShareholderCheckResult": {
+                "type": "object",
+                "properties": {
+                    "checks": {
+                        "description": "A list of the checks and their statuses.",
+                        "type": "array"
+                    },
+                    "shareholderCode": {
+                        "description": "The code of the shareholder, to which the document applies.\n>Required if the account holder referred to by the `accountHolderCode` has a `legalEntity` of type `Business` and the `documentType` is either `PASSPORT`, `ID_CARD_FRONT`, `ID_CARD_BACK`, `DRIVING_LICENCE_FRONT`, `DRIVING_LICENCE_BACK` (i.e. a document is being submitted in order to verify a shareholder).\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on when a document should be submitted in order to verify a shareholder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "KYCVerificationResult": {
+                "type": "object",
+                "properties": {
+                    "accountHolder": {
+                        "description": "The result(s) of the checks on the account holder.",
+                        "type": ""
+                    },
+                    "bankAccounts": {
+                        "description": "The result(s) of the checks on the bank account(s).",
+                        "type": "array"
+                    },
+                    "shareholders": {
+                        "description": "Each of the shareholders associated with the company.\nEach array entry should represent one shareholder.",
+                        "type": "array"
+                    }
+                }
+            },
+            "accountHolder": {
+                "type": "object"
+            },
+            "bankAccounts": {
+                "type": "array"
+            },
+            "PayoutMethod": {
+                "type": "object",
+                "properties": {
+                    "merchantAccount": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "payoutMethodCode": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "payoutMethodType": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "recurringDetailReference": {
+                        "description": "",
+                        "type": "string"
+                    },
+                    "shopperReference": {
+                        "description": "",
+                        "type": "string"
+                    }
+                }
+            },
+            "PayoutScheduleResponse": {
+                "type": "object",
+                "properties": {
+                    "nextScheduledPayout": {
+                        "description": "The date of the next scheduled payout.",
+                        "type": "string"
+                    },
+                    "schedule": {
+                        "description": "The payout schedule of the account.\n>Permitted values: `DEFAULT`, `HOLD`, `DAILY`, `WEEKLY`, `MONTHLY`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PerformVerificationRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountStateType": {
+                        "description": "The state required for the account holder.\n> Permitted values: `Processing`, `Payout`.",
+                        "type": "string"
+                    },
+                    "tier": {
+                        "description": "The tier required for the account holder.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "PersonalDocumentData": {
+                "type": "object",
+                "properties": {
+                    "expirationDate": {
+                        "description": "The expiration date of the document.\nThe date should be in ISO-8601 format yyyy-mm-dd (e.g. 2000-01-31).",
+                        "type": "string"
+                    },
+                    "issuerCountry": {
+                        "description": "The two-character country code of the issuer.\n>The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').",
+                        "type": "string"
+                    },
+                    "issuerState": {
+                        "description": "The state issued the document (if applicable)",
+                        "type": "string"
+                    },
+                    "number": {
+                        "description": "The number of the document. Delete the given type if the value empty.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of check.\n>Permitted Values: `COMPANY_VERIFICATION`, `IDENTITY_VERIFICATION`, `PASSPORT_VERIFICATION`, `BANK_ACCOUNT_VERIFICATION`, `NONPROFIT_VERIFICATION`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ShareholderContact": {
+                "type": "object",
+                "properties": {
+                    "address": {
+                        "description": "The address of the account holder.",
+                        "type": ""
+                    },
+                    "email": {
+                        "description": "The email address of the account holder.",
+                        "type": "string"
+                    },
+                    "fullPhoneNumber": {
+                        "description": "The phone number of the account holder provided as a single string. It will be handled as a landline phone.\n**Examples:** \"0031 6 11 22 33 44\", \"+316\/1122-3344\", \"(0031) 611223344\"",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "The name of the individual.\n>Make sure your account holder registers using the name shown on their Photo ID.",
+                        "type": ""
+                    },
+                    "personalData": {
+                        "description": "Personal information of the individual.",
+                        "type": ""
+                    },
+                    "phoneNumber": {
+                        "description": "The phone number of the contact.",
+                        "type": ""
+                    },
+                    "shareholderCode": {
+                        "description": "The code of the shareholder, to which the document applies.\n>Required if the account holder referred to by the `accountHolderCode` has a `legalEntity` of type `Business` and the `documentType` is either `PASSPORT`, `ID_CARD_FRONT`, `ID_CARD_BACK`, `DRIVING_LICENCE_FRONT`, `DRIVING_LICENCE_BACK` (i.e. a document is being submitted in order to verify a shareholder).\n\n>Refer to the [Onboarding and verification](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification) section for details on when a document should be submitted in order to verify a shareholder.",
+                        "type": "string"
+                    },
+                    "shareholderReference": {
+                        "description": "Merchant reference to the Shareholder.",
+                        "type": "string"
+                    },
+                    "webAddress": {
+                        "description": "The URL of the website of the account holder.",
+                        "type": "string"
+                    }
+                }
+            },
+            "phoneNumber": {
+                "type": "object"
+            },
+            "SuspendAccountHolderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    }
+                }
+            },
+            "SuspendAccountHolderResponse": {
+                "type": "object",
+                "properties": {
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "UnSuspendAccountHolderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    }
+                }
+            },
+            "UnSuspendAccountHolderResponse": {
+                "type": "object",
+                "properties": {
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateAccountHolderRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountHolderDetails": {
+                        "description": "The details of the prospective account holder.",
+                        "type": ""
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "legalEntity": {
+                        "description": "The entity type.\nPermitted values: `Business`, `Individual`\n\nIf an account holder is 'Business', then `accountHolderDetails.businessDetails` must be provided, as well as at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.\n\nIf an account holder is 'Individual', then `accountHolderDetails.individualDetails` must be provided.",
+                        "type": "string"
+                    },
+                    "primaryCurrency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes), with which the prospective account holder primarily deals.",
+                        "type": "string"
+                    },
+                    "processingTier": {
+                        "description": "The starting [processing tier](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks#tiers) for the prospective account holder.",
+                        "type": "integer"
+                    }
+                }
+            },
+            "UpdateAccountHolderResponse": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "accountHolderDetails": {
+                        "description": "The details of the prospective account holder.",
+                        "type": ""
+                    },
+                    "accountHolderStatus": {
+                        "description": "The new status of the Account Holder.",
+                        "type": ""
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "legalEntity": {
+                        "description": "The entity type.\nPermitted values: `Business`, `Individual`\n\nIf an account holder is 'Business', then `accountHolderDetails.businessDetails` must be provided, as well as at least one entry in the `accountHolderDetails.businessDetails.shareholders` list.\n\nIf an account holder is 'Individual', then `accountHolderDetails.individualDetails` must be provided.",
+                        "type": "string"
+                    },
+                    "primaryCurrency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes), with which the prospective account holder primarily deals.",
+                        "type": "string"
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    },
+                    "verification": {
+                        "description": "The details of KYC Verification of the account holder.",
+                        "type": ""
+                    }
+                }
+            },
+            "UpdateAccountHolderStateRequest": {
+                "type": "object",
+                "properties": {
+                    "accountHolderCode": {
+                        "description": "The code of the Account Holder to be closed.",
+                        "type": "string"
+                    },
+                    "disable": {
+                        "description": "If true, disable the requested state.  If false, enable the requested state.",
+                        "type": "boolean"
+                    },
+                    "reason": {
+                        "description": "The reason why this event has been created.",
+                        "type": "string"
+                    },
+                    "stateType": {
+                        "description": "The state to be updated.\n>Permitted values are: `Processing`, `Payout`",
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateAccountRequest": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "metadata": {
+                        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
+                        "type": "object"
+                    },
+                    "payoutSchedule": {
+                        "description": "The account's payout schedule.",
+                        "type": ""
+                    }
+                }
+            },
+            "UpdateAccountResponse": {
+                "type": "object",
+                "properties": {
+                    "accountCode": {
+                        "description": "The code of the account.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "A description of the account.",
+                        "type": "string"
+                    },
+                    "invalidFields": {
+                        "description": "Contains field validation errors that would prevent requests from being processed.",
+                        "type": "array"
+                    },
+                    "metadata": {
+                        "description": "A set of key and value pairs for general use by the merchant.\nThe keys do not have specific names and may be used for storing miscellaneous data as desired.\n> Note that during an update of metadata, the omission of existing key-value pairs will result in the deletion of those key-value pairs.",
+                        "type": "object"
+                    },
+                    "payoutSchedule": {
+                        "description": "The account's payout schedule.",
+                        "type": ""
+                    },
+                    "pspReference": {
+                        "description": "The reference of a request.  Can be used to uniquely identify the request.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result code.",
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdatePayoutScheduleRequest": {
+                "type": "object",
+                "properties": {
+                    "action": {
+                        "description": "Direction on how to handle any payouts that have already been scheduled.\nPermitted values:\n* `CLOSE` will close the existing batch of payouts.\n* `UPDATE` will reschedule the existing batch to the new schedule.\n* `NOTHING` (**default**) will allow the payout to proceed.",
+                        "type": "string"
+                    },
+                    "reason": {
+                        "description": "The reason why this event has been created.",
+                        "type": "string"
+                    },
+                    "schedule": {
+                        "description": "The payout schedule of the account.\n>Permitted values: `DEFAULT`, `HOLD`, `DAILY`, `WEEKLY`, `MONTHLY`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "UploadDocumentRequest": {
+                "type": "object",
+                "properties": {
+                    "documentContent": {
+                        "description": "The content of the document as represented by a Base64-encoded string.\n\nTo learn about requirements, see [Bank account check](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks\/bank-account-check#requirements) and [Photo ID check](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks\/photo-id-check#requirements).",
+                        "type": "string"
+                    },
+                    "documentDetail": {
+                        "description": "Details of the document being submitted.",
+                        "type": ""
+                    }
+                }
+            },
+            "documentDetail": {
+                "type": "object"
+            },
+            "ViasAddress": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "description": "The name of the city.\n>Required if either `houseNumberOrName`, `street`, `postalCode`, or `stateOrProvince` are provided.",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "The two-character country code of the address. The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').\n> If you don't know the country or are not collecting the country from the shopper, provide `country` as `ZZ`.",
+                        "type": "string"
+                    },
+                    "houseNumberOrName": {
+                        "description": "The number or name of the house.",
+                        "type": "string"
+                    },
+                    "postalCode": {
+                        "description": "The postal code.\n>A maximum of five (5) digits for an address in the USA, or a maximum of ten (10) characters for an address in all other countries.\n>Required if either `houseNumberOrName`, `street`, `city`, or `stateOrProvince` are provided.",
+                        "type": "string"
+                    },
+                    "stateOrProvince": {
+                        "description": "The abbreviation of the state or province.\n>Two (2) characters for an address in the USA or Canada, or a maximum of three (3) characters for an address in all other countries.\n>Required for an address in the USA or Canada if either `houseNumberOrName`, `street`, `city`, or `postalCode` are provided.",
+                        "type": "string"
+                    },
+                    "street": {
+                        "description": "The name of the street.\n>The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.\n>Required if either `houseNumberOrName`, `city`, `postalCode`, or `stateOrProvince` are provided.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ViasName": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "description": "The first name.",
+                        "type": "string"
+                    },
+                    "gender": {
+                        "description": "The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.",
+                        "type": "string"
+                    },
+                    "infix": {
+                        "description": "The name's infix, if applicable.\n>A maximum length of twenty (20) characters is imposed.",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The last name.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ViasPersonalData": {
+                "type": "object",
+                "properties": {
+                    "dateOfBirth": {
+                        "description": "The date of birth of the person.\nThe date should be in ISO-8601 format yyyy-mm-dd (e.g. 2000-01-31).",
+                        "type": "string"
+                    },
+                    "documentData": {
+                        "description": "Key value pairs of document type and identify numbers",
+                        "type": "array"
+                    },
+                    "nationality": {
+                        "description": "The nationality of the person represented by a two-character country code.\n>The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').",
+                        "type": "string"
+                    }
+                }
+            },
+            "documentData": {
+                "type": "array"
+            },
+            "ViasPhoneNumber": {
+                "type": "object",
+                "properties": {
+                    "phoneCountryCode": {
+                        "description": "The two-character country code of the phone number.\n>The permitted country codes are defined in ISO-3166-1 alpha-2 (e.g. 'NL').",
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "description": "The phone number.\n>The inclusion of the phone number country code is not necessary.",
+                        "type": "string"
+                    },
+                    "phoneType": {
+                        "description": "The type of the phone number.\n>The following values are permitted: `Landline`, `Mobile`, `SIP`, `Fax`.",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
