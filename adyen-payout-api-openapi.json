@@ -1,0 +1,1500 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "51",
+        "title": "Adyen Payout API",
+        "description": "A set of API endpoints that allow you to store payout details, confirm, or decline a payout.\n\nFor more information, refer to [Online payouts](https:\/\/docs.adyen.com\/checkout\/online-payouts).",
+        "termsOfService": "https:\/\/www.adyen.com\/legal\/terms-and-conditions"
+    },
+    "servers": [
+        "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51"
+    ],
+    "paths": {
+        "\/confirmThirdParty": {
+            "post": {
+                "summary": "Confirms a payout.",
+                "description": "Confirms a previously submitted payout.\n\nTo cancel a payout, use the `\/declineThirdParty` endpoint.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/declineThirdParty": {
+            "post": {
+                "summary": "Cancels a payout.",
+                "description": "Cancels a previously submitted payout.\n\nTo confirm and send a payout, use the `\/confirmThirdParty` endpoint.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/payout": {
+            "post": {
+                "summary": "Pay out directly.",
+                "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/storeDetail": {
+            "post": {
+                "summary": "Stores payout details.",
+                "description": "Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `\/submitThirdParty` call.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/storeDetailAndSubmitThirdParty": {
+            "post": {
+                "summary": "Stores details and submits a payout.",
+                "description": "Submits a payout and stores its details for subsequent payouts.\n\nThe submitted payout must be confirmed or declined either by a reviewer or via `\/confirmThirdParty` or `\/declineThirdParty` calls.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        },
+        "\/submitThirdParty": {
+            "post": {
+                "summary": "Submits a payout.",
+                "description": "Submits a payout using the previously stored payment details. To store payment details, use the `\/storeDetail` API call.\n\nThe submitted payout must be confirmed or declined either by a reviewer or via `\/confirmThirdParty` or `\/declineThirdParty` calls.",
+                "operationId": "",
+                "deprecated": 0,
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "OK - the request has succeeded."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AccountInfo": {
+                "type": "object",
+                "properties": {
+                    "accountAgeIndicator": {
+                        "description": "Indicator for the length of time since this shopper account was created in the merchant's environment.\nAllowed values:\n* notApplicable\n* thisTransaction\n* lessThan30Days\n* from30To60Days\n* moreThan60Days",
+                        "type": "string"
+                    },
+                    "accountChangeDate": {
+                        "description": "Date when the shopper's account was last changed.",
+                        "type": "string"
+                    },
+                    "accountChangeIndicator": {
+                        "description": "Indicator for the length of time since the shopper's account was last updated.\nAllowed values:\n* thisTransaction\n* lessThan30Days\n* from30To60Days\n* moreThan60Days",
+                        "type": "string"
+                    },
+                    "accountCreationDate": {
+                        "description": "Date when the shopper's account was created.",
+                        "type": "string"
+                    },
+                    "accountType": {
+                        "description": "Indicates the type of account. For example, for a multi-account card product.\nAllowed values:\n* notApplicable\n* credit\n* debit",
+                        "type": "string"
+                    },
+                    "addCardAttemptsDay": {
+                        "description": "Number of attempts the shopper tried to add a card to their account in the last day.",
+                        "type": "integer"
+                    },
+                    "deliveryAddressUsageDate": {
+                        "description": "Date the selected delivery address was first used.",
+                        "type": "string"
+                    },
+                    "deliveryAddressUsageIndicator": {
+                        "description": "Indicator for the length of time since this delivery address was first used.\nAllowed values:\n* thisTransaction\n* lessThan30Days\n* from30To60Days\n* moreThan60Days",
+                        "type": "string"
+                    },
+                    "homePhone": {
+                        "description": "Shopper's home phone number (including the country code).",
+                        "type": "string"
+                    },
+                    "mobilePhone": {
+                        "description": "Shopper's mobile phone number (including the country code).",
+                        "type": "string"
+                    },
+                    "passwordChangeDate": {
+                        "description": "Date when the shopper last changed their password.",
+                        "type": "string"
+                    },
+                    "passwordChangeIndicator": {
+                        "description": "Indicator when the shopper has changed their password.\nAllowed values:\n* notApplicable\n* thisTransaction\n* lessThan30Days\n* from30To60Days\n* moreThan60Days",
+                        "type": "string"
+                    },
+                    "pastTransactionsDay": {
+                        "description": "Number of all transactions (successful and abandoned) from this shopper in the past 24 hours.",
+                        "type": "integer"
+                    },
+                    "pastTransactionsYear": {
+                        "description": "Number of all transactions (successful and abandoned) from this shopper in the past year.",
+                        "type": "integer"
+                    },
+                    "paymentAccountAge": {
+                        "description": "Date this payment method was added to the shopper's account.",
+                        "type": "string"
+                    },
+                    "paymentAccountIndicator": {
+                        "description": "Indicator for the length of time since this payment method was added to this shopper's account.\nAllowed values:\n* notApplicable\n* thisTransaction\n* lessThan30Days\n* from30To60Days\n* moreThan60Days",
+                        "type": "string"
+                    },
+                    "purchasesLast6Months": {
+                        "description": "Number of successful purchases in the last six months.",
+                        "type": "integer"
+                    },
+                    "suspiciousActivity": {
+                        "description": "Whether suspicious activity was recorded on this account.",
+                        "type": "boolean"
+                    },
+                    "workPhone": {
+                        "description": "Shopper's work phone number (including the country code).",
+                        "type": "string"
+                    }
+                }
+            },
+            "Address": {
+                "type": "object",
+                "properties": {
+                    "city": {
+                        "description": "The name of the city.",
+                        "type": "string"
+                    },
+                    "country": {
+                        "description": "The two-character country code as defined in ISO-3166-1 alpha-2. For example, **US**.\n> If you don't know the country or are not collecting the country from the shopper, provide `country` as `ZZ`.",
+                        "type": "string"
+                    },
+                    "houseNumberOrName": {
+                        "description": "The number or name of the house.",
+                        "type": "string"
+                    },
+                    "postalCode": {
+                        "description": "A maximum of five digits for an address in the US, or a maximum of ten characters for an address in all other countries.",
+                        "type": "string"
+                    },
+                    "stateOrProvince": {
+                        "description": "State or province codes as defined in ISO 3166-2. For example, **SF** in US or **ON** for Canada.\n> Required for the US and Canada.",
+                        "type": "string"
+                    },
+                    "street": {
+                        "description": "The name of the street.\n> The house number should not be included in this field; it should be separately provided via `houseNumberOrName`.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Amount": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The payable amount that can be charged for the transaction.\n\nThe transaction amount needs to be represented in minor units according to the [following table](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "integer"
+                    }
+                }
+            },
+            "ApplicationInfo": {
+                "type": "object",
+                "properties": {
+                    "adyenLibrary": {
+                        "description": "Adyen-developed software, such as libraries and plugins, used to interact with the Adyen API. For example, Magento plugin, Java API library, etc.",
+                        "type": ""
+                    },
+                    "adyenPaymentSource": {
+                        "description": "Adyen-developed software to get payment details. For example, Checkout SDK, Secured Fields SDK, etc.",
+                        "type": ""
+                    },
+                    "externalPlatform": {
+                        "description": "Third-party developed platform used to initiate payment requests. For example, Magento, Zuora, etc.",
+                        "type": ""
+                    },
+                    "merchantApplication": {
+                        "description": "Merchant developed software, such as cashier application, used to interact with the Adyen API.",
+                        "type": ""
+                    },
+                    "merchantDevice": {
+                        "description": "Merchant device information.",
+                        "type": ""
+                    },
+                    "shopperInteractionDevice": {
+                        "description": "Shopper interaction device, such as terminal, mobile device or web browser, to initiate payment requests.",
+                        "type": ""
+                    }
+                }
+            },
+            "adyenLibrary": {
+                "type": "object"
+            },
+            "adyenPaymentSource": {
+                "type": "object"
+            },
+            "externalPlatform": {
+                "type": "object",
+                "properties": {
+                    "integrator": {
+                        "description": "External platform integrator.",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name of the field. For example, Name of External Platform.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Version of the field. For example, Version of External Platform.",
+                        "type": "string"
+                    }
+                }
+            },
+            "merchantApplication": {
+                "type": "object"
+            },
+            "merchantDevice": {
+                "type": "object",
+                "properties": {
+                    "os": {
+                        "description": "Operating system running on the merchant device.",
+                        "type": "string"
+                    },
+                    "osVersion": {
+                        "description": "Version of the operating system on the merchant device.",
+                        "type": "string"
+                    },
+                    "reference": {
+                        "description": "The reference assigned to the forex quote request.",
+                        "type": "string"
+                    }
+                }
+            },
+            "shopperInteractionDevice": {
+                "type": "object",
+                "properties": {
+                    "locale": {
+                        "description": "Locale on the shopper interaction device.",
+                        "type": "string"
+                    },
+                    "os": {
+                        "description": "Operating system running on the merchant device.",
+                        "type": "string"
+                    },
+                    "osVersion": {
+                        "description": "Version of the operating system on the merchant device.",
+                        "type": "string"
+                    }
+                }
+            },
+            "BankAccount": {
+                "type": "object",
+                "properties": {
+                    "bankAccountNumber": {
+                        "description": "The bank account number (without separators).",
+                        "type": "string"
+                    },
+                    "bankCity": {
+                        "description": "The bank city.",
+                        "type": "string"
+                    },
+                    "bankLocationId": {
+                        "description": "The location id of the bank. The field value is `nil` in most cases.",
+                        "type": "string"
+                    },
+                    "bankName": {
+                        "description": "The name of the bank.",
+                        "type": "string"
+                    },
+                    "bic": {
+                        "description": "The [Business Identifier Code](https:\/\/en.wikipedia.org\/wiki\/ISO_9362) (BIC) is the SWIFT address assigned to a bank. The field value is `nil` in most cases.",
+                        "type": "string"
+                    },
+                    "countryCode": {
+                        "description": "Country code where the bank is located.\n\nA valid value is an ISO two-character country code (e.g. 'NL').",
+                        "type": "string"
+                    },
+                    "iban": {
+                        "description": "The [International Bank Account Number](https:\/\/en.wikipedia.org\/wiki\/International_Bank_Account_Number) (IBAN).",
+                        "type": "string"
+                    },
+                    "ownerName": {
+                        "description": "The name of the bank account holder.\nIf you submit a name with non-Latin characters, we automatically replace some of them with corresponding Latin characters to meet the FATF recommendations. For example:\n* \u03c712 is converted to ch12.\n* \u00fcA is converted to euA.\n* Peter M\u00f8ller is converted to Peter Mller, because banks don't accept '\u00f8'.\nAfter replacement, the ownerName must have at least three alphanumeric characters (A-Z, a-z, 0-9), and at least one of them must be a valid Latin character (A-Z, a-z). For example:\n* John17 - allowed.\n* J17 - allowed.\n* 171 - not allowed.\n* John-7 - allowed.\n> If provided details don't match the required format, the response returns the error message: 203 'Invalid bank account holder name'.",
+                        "type": "string"
+                    },
+                    "taxId": {
+                        "description": "The bank account holder's tax ID.",
+                        "type": "string"
+                    }
+                }
+            },
+            "BrowserInfo": {
+                "type": "object",
+                "properties": {
+                    "acceptHeader": {
+                        "description": "The accept header value of the shopper's browser.",
+                        "type": "string"
+                    },
+                    "colorDepth": {
+                        "description": "The color depth of the shopper's browser in bits per pixel. This should be obtained by using the browser's `screen.colorDepth` property. Accepted values: 1, 4, 8, 15, 16, 24, 32 or 48 bit color depth.",
+                        "type": "integer"
+                    },
+                    "javaEnabled": {
+                        "description": "Boolean value indicating if the shopper's browser is able to execute Java.",
+                        "type": "boolean"
+                    },
+                    "javaScriptEnabled": {
+                        "description": "Boolean value indicating if the shopper's browser is able to execute JavaScript. A default 'true' value is assumed if the field is not present.",
+                        "type": "boolean"
+                    },
+                    "language": {
+                        "description": "The `navigator.language` value of the shopper's browser (as defined in IETF BCP 47).",
+                        "type": "string"
+                    },
+                    "screenHeight": {
+                        "description": "The total height of the shopper's device screen in pixels.",
+                        "type": "integer"
+                    },
+                    "screenWidth": {
+                        "description": "The total width of the shopper's device screen in pixels.",
+                        "type": "integer"
+                    },
+                    "timeZoneOffset": {
+                        "description": "Time difference between UTC time and the shopper's browser local time, in minutes.",
+                        "type": "integer"
+                    },
+                    "userAgent": {
+                        "description": "The user agent value of the shopper's browser.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Card": {
+                "type": "object",
+                "properties": {
+                    "cvc": {
+                        "description": "The [card verification code](https:\/\/docs.adyen.com\/payments-fundamentals\/payment-glossary#card-security-code-cvc-cvv-cid) (1-20 characters). Depending on the card brand, it is known also as:\n* CVV2\/CVC2 \u2013 length: 3 digits\n* CID \u2013 length: 4 digits\n> If you are using [Client-Side Encryption](https:\/\/docs.adyen.com\/classic-integration\/cse-integration-ecommerce), the CVC code is present in the encrypted data. You must never post the card details to the server.\n> This field must be always present in a [one-click payment request](https:\/\/docs.adyen.com\/classic-integration\/recurring-payments).\n> When this value is returned in a response, it is always empty because it is not stored.",
+                        "type": "string"
+                    },
+                    "expiryMonth": {
+                        "description": "The card expiry month.\nFormat: 2 digits, zero-padded for single digits. For example:\n* 03 = March\n* 11 = November",
+                        "type": "string"
+                    },
+                    "expiryYear": {
+                        "description": "The card expiry year.\nFormat: 4 digits. For example: 2020",
+                        "type": "string"
+                    },
+                    "holderName": {
+                        "description": "The name of the cardholder, as printed on the card.",
+                        "type": "string"
+                    },
+                    "issueNumber": {
+                        "description": "The issue number of the card (for some UK debit cards only).",
+                        "type": "string"
+                    },
+                    "number": {
+                        "description": "The card number (4-19 characters). Do not use any separators.\nWhen this value is returned in a response, only the last 4 digits of the card number are returned.",
+                        "type": "string"
+                    },
+                    "startMonth": {
+                        "description": "The month component of the start date (for some UK debit cards only).",
+                        "type": "string"
+                    },
+                    "startYear": {
+                        "description": "The year component of the start date (for some UK debit cards only).",
+                        "type": "string"
+                    }
+                }
+            },
+            "CommonField": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of the field. For example, Name of External Platform.",
+                        "type": "string"
+                    },
+                    "version": {
+                        "description": "Version of the field. For example, Version of External Platform.",
+                        "type": "string"
+                    }
+                }
+            },
+            "DeviceRenderOptions": {
+                "type": "object",
+                "properties": {
+                    "sdkInterface": {
+                        "description": "Supported SDK interface types.\nAllowed values:\n* Native\n* Html\n* both",
+                        "type": "string"
+                    },
+                    "sdkUiType": {
+                        "description": "UI types supported for displaying specific challenges.\nAllowed values:\n* text\n* singleSelect\n* outOfBand\n* otherHtml\n* multiSelect",
+                        "type": "array"
+                    }
+                }
+            },
+            "sdkUiType": {
+                "type": "array"
+            },
+            "ForexQuote": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "description": "The account name.",
+                        "type": "string"
+                    },
+                    "accountType": {
+                        "description": "Indicates the type of account. For example, for a multi-account card product.\nAllowed values:\n* notApplicable\n* credit\n* debit",
+                        "type": "string"
+                    },
+                    "baseAmount": {
+                        "description": "The base amount.",
+                        "type": ""
+                    },
+                    "basePoints": {
+                        "description": "The base points.",
+                        "type": "integer"
+                    },
+                    "buy": {
+                        "description": "The buy rate.",
+                        "type": ""
+                    },
+                    "interbank": {
+                        "description": "The interbank amount.",
+                        "type": ""
+                    },
+                    "reference": {
+                        "description": "The reference assigned to the forex quote request.",
+                        "type": "string"
+                    },
+                    "sell": {
+                        "description": "The sell rate.",
+                        "type": ""
+                    },
+                    "signature": {
+                        "description": "The signature to validate the integrity.",
+                        "type": "string"
+                    },
+                    "source": {
+                        "description": "The source of the forex quote.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of forex.",
+                        "type": "string"
+                    },
+                    "validTill": {
+                        "description": "The date until which the forex quote is valid.",
+                        "type": "string"
+                    }
+                }
+            },
+            "baseAmount": {
+                "type": "object"
+            },
+            "buy": {
+                "type": "object"
+            },
+            "interbank": {
+                "type": "object"
+            },
+            "sell": {
+                "type": "object"
+            },
+            "FraudCheckResult": {
+                "type": "object",
+                "properties": {
+                    "accountScore": {
+                        "description": "The fraud score generated by the risk check.",
+                        "type": "integer"
+                    },
+                    "checkId": {
+                        "description": "The ID of the risk check.",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "description": "Name of the field. For example, Name of External Platform.",
+                        "type": "string"
+                    }
+                }
+            },
+            "FraudResult": {
+                "type": "object",
+                "properties": {
+                    "accountScore": {
+                        "description": "The fraud score generated by the risk check.",
+                        "type": "integer"
+                    },
+                    "results": {
+                        "description": "The result of the individual risk checks.",
+                        "type": "array"
+                    }
+                }
+            },
+            "results": {
+                "type": "array"
+            },
+            "FundSource": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "billingAddress": {
+                        "description": "the address where to send the invoice",
+                        "type": ""
+                    },
+                    "card": {
+                        "description": "a representation of a (credit or debit) card",
+                        "type": ""
+                    },
+                    "shopperEmail": {
+                        "description": "the email address of the person",
+                        "type": "string"
+                    },
+                    "shopperName": {
+                        "description": "the name of the person",
+                        "type": ""
+                    },
+                    "telephoneNumber": {
+                        "description": "the telephone number of the person",
+                        "type": "string"
+                    }
+                }
+            },
+            "additionalData": {
+                "type": "object"
+            },
+            "billingAddress": {
+                "type": "object"
+            },
+            "card": {
+                "type": "object"
+            },
+            "shopperName": {
+                "type": "object"
+            },
+            "Installments": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "description": "The payable amount that can be charged for the transaction.\n\nThe transaction amount needs to be represented in minor units according to the [following table](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "integer"
+                    }
+                }
+            },
+            "MerchantRiskIndicator": {
+                "type": "object",
+                "properties": {
+                    "addressMatch": {
+                        "description": "Whether the chosen delivery address is identical to the billing address.",
+                        "type": "boolean"
+                    },
+                    "deliveryAddressIndicator": {
+                        "description": "Indicator regarding the delivery address.\nAllowed values:\n* `shipToBillingAddress`\n* `shipToVerifiedAddress`\n* `shipToNewAddress`\n* `shipToStore`\n* `digitalGoods`\n* `goodsNotShipped`\n* `other`",
+                        "type": "string"
+                    },
+                    "deliveryEmail": {
+                        "description": "The delivery email address (for digital goods).",
+                        "type": "string"
+                    },
+                    "deliveryTimeframe": {
+                        "description": "The estimated delivery time for the shopper to receive the goods.\nAllowed values:\n* `electronicDelivery`\n* `sameDayShipping`\n* `overnightShipping`\n* `twoOrMoreDaysShipping`",
+                        "type": "string"
+                    },
+                    "giftCardAmount": {
+                        "description": "The amount of prepaid or gift cards used for this purchase.",
+                        "type": ""
+                    },
+                    "giftCardCount": {
+                        "description": "Number of individual prepaid or gift cards used for this purchase.",
+                        "type": "integer"
+                    },
+                    "preOrderDate": {
+                        "description": "For pre-order purchases, the expected date this product will be available to the shopper.",
+                        "type": "string"
+                    },
+                    "preOrderPurchase": {
+                        "description": "Indicator for whether this transaction is for pre-ordering a product.",
+                        "type": "boolean"
+                    },
+                    "reorderItems": {
+                        "description": "Indicator for whether the shopper has already purchased the same items in the past.",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "giftCardAmount": {
+                "type": "object"
+            },
+            "ModifyRequest": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "merchantAccount": {
+                        "description": "The merchant account identifier, with which you want to process the transaction.",
+                        "type": "string"
+                    },
+                    "originalReference": {
+                        "description": "The PSP reference received in the `\/submitThirdParty` response.",
+                        "type": "string"
+                    }
+                }
+            },
+            "ModifyResponse": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "pspReference": {
+                        "description": "Adyen's 16-character string reference associated with the transaction. This value is globally unique; quote it when communicating with us about this response.",
+                        "type": "string"
+                    },
+                    "response": {
+                        "description": "The response:\n* In case of success, it is either `payout-confirm-received` or `payout-decline-received`.\n* In case of an error, an informational message is returned.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Name": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "description": "The first name.",
+                        "type": "string"
+                    },
+                    "gender": {
+                        "description": "The gender.\n>The following values are permitted: `MALE`, `FEMALE`, `UNKNOWN`.",
+                        "type": "string"
+                    },
+                    "infix": {
+                        "description": "The name's infix, if applicable.\n>A maximum length of twenty (20) characters is imposed.",
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "description": "The last name.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PayoutRequest": {
+                "type": "object",
+                "properties": {
+                    "accountInfo": {
+                        "description": "Shopper account information for 3D Secure 2.\n> For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.",
+                        "type": ""
+                    },
+                    "additionalAmount": {
+                        "description": "If you want a [BIN or card verification](https:\/\/docs.adyen.com\/payment-methods\/cards\/bin-data-and-card-verification) request to use a non-zero value, assign this value to `additionalAmount` (while the amount must be still set to 0 to trigger BIN or card verification).\nRequired to be in the same currency as the `amount`. ",
+                        "type": ""
+                    },
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "amount": {
+                        "description": "The amount information for the transaction. For [BIN or card verification](https:\/\/docs.adyen.com\/payment-methods\/cards\/bin-data-and-card-verification) requests, set amount to 0 (zero).",
+                        "type": ""
+                    },
+                    "applicationInfo": {
+                        "description": "Information about your application. For more details, see [Building Adyen solutions](https:\/\/docs.adyen.com\/development-resources\/building-adyen-solutions).",
+                        "type": ""
+                    },
+                    "bankAccount": {
+                        "description": "The details of the bank account, from which the payment should be made.\n> Either `bankAccount` or `card` field must be provided in a payment request.",
+                        "type": ""
+                    },
+                    "billingAddress": {
+                        "description": "the address where to send the invoice",
+                        "type": ""
+                    },
+                    "browserInfo": {
+                        "description": "The shopper's browser information.\n> For 3D Secure 2 transactions, `browserInfo` is required for `channel` **web** (or `deviceChannel` **browser**).",
+                        "type": ""
+                    },
+                    "captureDelayHours": {
+                        "description": "The delay between the authorisation and scheduled auto-capture, specified in hours.",
+                        "type": "integer"
+                    },
+                    "card": {
+                        "description": "a representation of a (credit or debit) card",
+                        "type": ""
+                    },
+                    "dateOfBirth": {
+                        "description": "The shopper's date of birth.\n\nFormat [ISO-8601](https:\/\/www.w3.org\/TR\/NOTE-datetime): YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "dccQuote": {
+                        "description": "The forex quote as returned in the response of the forex service.",
+                        "type": ""
+                    },
+                    "deliveryAddress": {
+                        "description": "The address where the purchased goods should be delivered.",
+                        "type": ""
+                    },
+                    "deliveryDate": {
+                        "description": "The date and time the purchased goods should be delivered.\n\nFormat [ISO 8601](https:\/\/www.w3.org\/TR\/NOTE-datetime): YYYY-MM-DDThh:mm:ss.sssTZD\n\nExample: 2017-07-17T13:42:40.428+01:00",
+                        "type": "string"
+                    },
+                    "deviceFingerprint": {
+                        "description": "A string containing the shopper's device fingerprint. For more information, refer to [Device fingerprinting](https:\/\/docs.adyen.com\/risk-management\/device-fingerprinting).",
+                        "type": "string"
+                    },
+                    "enableRealTimeUpdate": {
+                        "description": "Choose if a specific transaction should use the Real-time Account Updater, regardless of other settings.",
+                        "type": "boolean"
+                    },
+                    "entityType": {
+                        "description": "The type of the entity the payment is processed for.",
+                        "type": "string"
+                    },
+                    "fraudOffset": {
+                        "description": "An integer value that is added to the normal fraud score. The value can be either positive or negative.",
+                        "type": "integer"
+                    },
+                    "fundSource": {
+                        "description": "The person or entity funding the money.",
+                        "type": ""
+                    },
+                    "installments": {
+                        "description": "Contains installment settings. For more information, refer to [Installments](https:\/\/docs.adyen.com\/payment-methods\/installment-payments).",
+                        "type": ""
+                    },
+                    "mcc": {
+                        "description": "The [merchant category code](https:\/\/en.wikipedia.org\/wiki\/Merchant_category_code) (MCC) is a four-digit number, which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.",
+                        "type": "string"
+                    },
+                    "merchantAccount": {
+                        "description": "The merchant account identifier, with which you want to process the transaction.",
+                        "type": "string"
+                    },
+                    "merchantOrderReference": {
+                        "description": "This reference allows linking multiple transactions to each other for reporting purposes (i.e. order auth-rate). The reference should be unique per billing cycle.\nThe same merchant order reference should never be reused after the first authorised attempt. If used, this field should be supplied for all incoming authorisations.\n> We strongly recommend you send the `merchantOrderReference` value to benefit from linking payment requests when authorisation retries take place. In addition, we recommend you provide `retry.orderAttemptNumber`, `retry.chainAttemptNumber`, and `retry.skipRetry` values in `PaymentRequest.additionalData`.",
+                        "type": "string"
+                    },
+                    "merchantRiskIndicator": {
+                        "description": "Additional risk fields for 3D Secure 2.\n> For 3D Secure 2 transactions, we recommend that you include this object to increase the chances of achieving a frictionless flow.",
+                        "type": ""
+                    },
+                    "metadata": {
+                        "description": "Metadata consists of entries, each of which includes a key and a value.\nLimitations: Maximum 20 key-value pairs per request. When exceeding, the \"177\" error occurs: \"Metadata size exceeds limit\".",
+                        "type": "object"
+                    },
+                    "mpiData": {
+                        "description": "Authentication data produced by an MPI (Mastercard SecureCode or Verified By Visa).",
+                        "type": ""
+                    },
+                    "nationality": {
+                        "description": "The two-character country code of the shopper's nationality.",
+                        "type": "string"
+                    },
+                    "orderReference": {
+                        "description": "When you are doing multiple partial (gift card) payments, this is the `pspReference` of the first payment. We use this to link the multiple payments to each other. As your own reference for linking multiple payments, use the `merchantOrderReference`instead.",
+                        "type": "string"
+                    },
+                    "recurring": {
+                        "description": "The recurring settings for the payment. Use this property when you want to enable [recurring payments](https:\/\/docs.adyen.com\/classic-integration\/recurring-payments).",
+                        "type": ""
+                    },
+                    "recurringProcessingModel": {
+                        "description": "Defines a recurring payment type.\nAllowed values:\n* `Subscription` \u2013 A transaction for a fixed or variable amount, which follows a fixed schedule.\n* `CardOnFile` \u2013 Card details are stored to enable one-click or omnichannel journeys, or simply to streamline the checkout process. Any subscription not following a fixed schedule is also considered a card-on-file transaction.\n* `UnscheduledCardOnFile` \u2013 A transaction that occurs on a non-fixed schedule and\/or have variable amounts. For example, automatic top-ups when a cardholder's balance drops below a certain amount.\n",
+                        "type": "string"
+                    },
+                    "reference": {
+                        "description": "The reference assigned to the forex quote request.",
+                        "type": "string"
+                    },
+                    "selectedBrand": {
+                        "description": "Some payment methods require defining a value for this field to specify how to process the transaction.\n\nFor the Bancontact payment method, it can be set to:\n* `maestro` (default), to be processed like a Maestro card, or\n* `bcmc`, to be processed like a Bancontact card.",
+                        "type": "string"
+                    },
+                    "selectedRecurringDetailReference": {
+                        "description": "The `recurringDetailReference` you want to use for this payment. The value `LATEST` can be used to select the most recently stored recurring detail.",
+                        "type": "string"
+                    },
+                    "sessionId": {
+                        "description": "A session ID used to identify a payment session.",
+                        "type": "string"
+                    },
+                    "shopperEmail": {
+                        "description": "the email address of the person",
+                        "type": "string"
+                    },
+                    "shopperIP": {
+                        "description": "The shopper's IP address. In general, we recommend that you provide this data, as it is used in a number of risk checks (for instance, number of payment attempts or location-based checks).\n> Required for 3D Secure 2 transactions. This field is also mandatory for some merchants depending on your business model. For more information, [contact Support](https:\/\/support.adyen.com\/hc\/en-us\/requests\/new).",
+                        "type": "string"
+                    },
+                    "shopperInteraction": {
+                        "description": "Specifies the sales channel, through which the shopper gives their card details, and whether the shopper is a returning customer.\nFor the web service API, Adyen assumes Ecommerce shopper interaction by default.\n\nThis field has the following possible values:\n* `Ecommerce` - Online transactions where the cardholder is present (online). For better authorisation rates, we recommend sending the card security code (CSC) along with the request.\n* `ContAuth` - Card on file and\/or subscription transactions, where the cardholder is known to the merchant (returning customer). If the shopper is present (online), you can supply also the CSC to improve authorisation (one-click payment).\n* `Moto` - Mail-order and telephone-order transactions where the shopper is in contact with the merchant via email or telephone.\n* `POS` - Point-of-sale transactions where the shopper is physically present to make a payment using a secure payment terminal.",
+                        "type": "string"
+                    },
+                    "shopperLocale": {
+                        "description": "The combination of a language code and a country code to specify the language to be used in the payment.",
+                        "type": "string"
+                    },
+                    "shopperName": {
+                        "description": "the name of the person",
+                        "type": ""
+                    },
+                    "shopperReference": {
+                        "description": "The shopper's reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.",
+                        "type": "string"
+                    },
+                    "shopperStatement": {
+                        "description": "The text to appear on the shopper's bank statement.",
+                        "type": "string"
+                    },
+                    "socialSecurityNumber": {
+                        "description": "The shopper's social security number.",
+                        "type": "string"
+                    },
+                    "splits": {
+                        "description": "The details of how the payment should be split when distributing a payment to a MarketPay Marketplace and its Accounts.",
+                        "type": "array"
+                    },
+                    "store": {
+                        "description": "The physical store, for which this payment is processed.",
+                        "type": "string"
+                    },
+                    "telephoneNumber": {
+                        "description": "the telephone number of the person",
+                        "type": "string"
+                    },
+                    "threeDS2RequestData": {
+                        "description": "Request fields for 3D Secure 2.",
+                        "type": ""
+                    },
+                    "threeDSAuthenticationOnly": {
+                        "description": "If set to true, you will only perform the [3D Secure 2 authentication](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only), and not the payment authorisation.",
+                        "type": "boolean"
+                    },
+                    "totalsGroup": {
+                        "description": "The reference value to aggregate sales totals in reporting. When not specified, the store field is used (if available).",
+                        "type": "string"
+                    },
+                    "trustedShopper": {
+                        "description": "Set to true if the payment should be routed to a trusted MID.",
+                        "type": "boolean"
+                    }
+                }
+            },
+            "accountInfo": {
+                "type": "object"
+            },
+            "additionalAmount": {
+                "type": "object"
+            },
+            "amount": {
+                "type": "object"
+            },
+            "applicationInfo": {
+                "type": "object"
+            },
+            "bankAccount": {
+                "type": "object"
+            },
+            "browserInfo": {
+                "type": "object"
+            },
+            "dccQuote": {
+                "type": "object"
+            },
+            "deliveryAddress": {
+                "type": "object"
+            },
+            "fundSource": {
+                "type": "object"
+            },
+            "installments": {
+                "type": "object"
+            },
+            "merchantRiskIndicator": {
+                "type": "object"
+            },
+            "metadata": {
+                "type": "object"
+            },
+            "mpiData": {
+                "type": "object"
+            },
+            "recurring": {
+                "type": "object",
+                "properties": {
+                    "contract": {
+                        "description": "The type of recurring contract to be used.\nPossible values:\n* `ONECLICK` \u2013 Payment details can be used to initiate a one-click payment, where the shopper enters the [card security code (CVC\/CVV)](https:\/\/docs.adyen.com\/payments-fundamentals\/payment-glossary#card-security-code-cvc-cvv-cid).\n* `RECURRING` \u2013 Payment details can be used without the card security code to initiate [card-not-present transactions](https:\/\/docs.adyen.com\/payments-fundamentals\/payment-glossary#card-not-present-cnp).\n* `ONECLICK,RECURRING` \u2013 Payment details can be used regardless of whether the shopper is on your site or not.\n* `PAYOUT` \u2013 Payment details can be used to [make a payout](https:\/\/docs.adyen.com\/checkout\/online-payouts).",
+                        "type": "string"
+                    },
+                    "recurringDetailName": {
+                        "description": "A descriptive name for this detail.",
+                        "type": "string"
+                    },
+                    "recurringExpiry": {
+                        "description": "Date after which no further authorisations shall be performed. Only for 3D Secure 2.",
+                        "type": "string"
+                    },
+                    "recurringFrequency": {
+                        "description": "Minimum number of days between authorisations. Only for 3D Secure 2.",
+                        "type": "string"
+                    },
+                    "tokenService": {
+                        "description": "The name of the token service.",
+                        "type": "string"
+                    }
+                }
+            },
+            "splits": {
+                "type": "array"
+            },
+            "threeDS2RequestData": {
+                "type": "object",
+                "properties": {
+                    "acquirerBIN": {
+                        "description": "Required for [authentication-only integration](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only). The acquiring BIN enrolled for 3D Secure 2. This string should match the value that you will use in the authorisation. Use 123456 on the Test platform.",
+                        "type": "string"
+                    },
+                    "acquirerMerchantID": {
+                        "description": "Required for [authentication-only integration](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only). The merchantId that is enrolled for 3D Secure 2 by the merchant's acquirer. This string should match the value that you will use in the authorisation. Use 123456 on the Test platform.",
+                        "type": "string"
+                    },
+                    "authenticationOnly": {
+                        "description": "If set to true, you will only perform the [3D Secure 2 authentication](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only), and not the payment authorisation.",
+                        "type": "boolean"
+                    },
+                    "challengeIndicator": {
+                        "description": "Possibility to specify a preference for receiving a challenge from the issuer.\nAllowed values:\n* `noPreference`\n* `requestNoChallenge`\n* `requestChallenge`\n* `requestChallengeAsMandate`\n",
+                        "type": "string"
+                    },
+                    "deviceChannel": {
+                        "description": "The environment of the shopper.\nAllowed values:\n* `app`\n* `browser`",
+                        "type": "string"
+                    },
+                    "deviceRenderOptions": {
+                        "description": "Display options for the 3D Secure 2 SDK.\nOptional and only for `deviceChannel` **app**.",
+                        "type": ""
+                    },
+                    "mcc": {
+                        "description": "The [merchant category code](https:\/\/en.wikipedia.org\/wiki\/Merchant_category_code) (MCC) is a four-digit number, which relates to a particular market segment. This code reflects the predominant activity that is conducted by the merchant.",
+                        "type": "string"
+                    },
+                    "merchantName": {
+                        "description": "Required for [authentication-only integration](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only). The merchant name that the issuer presents to the shopper if they get a challenge. We recommend to use the same value that you will use in the authorization. Maximum length is 40 characters.\n> Optional for a [full 3D Secure 2 integration](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/api-integration). Use this field if you are enrolled for 3D Secure 2 with us and want to override the merchant name already configured on your account.",
+                        "type": "string"
+                    },
+                    "messageVersion": {
+                        "description": "The `messageVersion` value indicating the 3D Secure 2 protocol version.",
+                        "type": "string"
+                    },
+                    "notificationURL": {
+                        "description": "URL to where the issuer should send the `CRes`. Required if you are not using components for `channel` **Web** or if you are using classic integration `deviceChannel` **browser**.",
+                        "type": "string"
+                    },
+                    "sdkAppID": {
+                        "description": "The `sdkAppID` value as received from the 3D Secure 2 SDK.\nRequired for `deviceChannel` set to **app**.",
+                        "type": "string"
+                    },
+                    "sdkEncData": {
+                        "description": "The `sdkEncData` value as received from the 3D Secure 2 SDK.\nRequired for `deviceChannel` set to **app**.",
+                        "type": "string"
+                    },
+                    "sdkEphemPubKey": {
+                        "description": "The `sdkEphemPubKey` value as received from the 3D Secure 2 SDK.\nRequired for `deviceChannel` set to **app**.",
+                        "type": ""
+                    },
+                    "sdkMaxTimeout": {
+                        "description": "The maximum amount of time in minutes for the 3D Secure 2 authentication process.\nOptional and only for `deviceChannel` set to **app**. Defaults to **60** minutes.",
+                        "type": "integer"
+                    },
+                    "sdkReferenceNumber": {
+                        "description": "The `sdkReferenceNumber` value as received from the 3D Secure 2 SDK.\nOnly for `deviceChannel` set to **app**.",
+                        "type": "string"
+                    },
+                    "sdkTransID": {
+                        "description": "The `sdkTransID` value as received from the 3D Secure 2 SDK.\nOnly for `deviceChannel` set to **app**.",
+                        "type": "string"
+                    },
+                    "threeDSCompInd": {
+                        "description": "Completion indicator for the device fingerprinting.",
+                        "type": "string"
+                    },
+                    "threeDSRequestorID": {
+                        "description": "Required for [authentication-only integration](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only) for Visa. Unique 3D Secure requestor identifier assigned by the Directory Server when you enrol for 3D Secure 2.",
+                        "type": "string"
+                    },
+                    "threeDSRequestorName": {
+                        "description": "Required for [authentication-only integration](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2\/authentication-only) for Visa. Unique 3D Secure requestor name assigned by the Directory Server when you enrol for 3D Secure 2.",
+                        "type": "string"
+                    },
+                    "threeDSRequestorURL": {
+                        "description": "URL of the (customer service) website that will be shown to the shopper in case of technical errors during the 3D Secure 2 process.",
+                        "type": "string"
+                    },
+                    "transactionType": {
+                        "description": "Identify the type of the transaction being authenticated.",
+                        "type": "string"
+                    },
+                    "whiteListStatus": {
+                        "description": "The `whiteListStatus` value returned from a previous 3D Secure 2 transaction, only applicable for 3D Secure 2 protocol version 2.2.0.",
+                        "type": "string"
+                    }
+                }
+            },
+            "PayoutResponse": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "authCode": {
+                        "description": "Authorisation code:\n* When the payment is authorised successfully, this field holds the authorisation code for the payment.\n* When the payment is not authorised, this field is empty.",
+                        "type": "string"
+                    },
+                    "dccAmount": {
+                        "description": "Includes the currency of the conversion and the value of the transaction.\n> This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https:\/\/support.adyen.com\/hc\/en-us\/requests\/new).",
+                        "type": ""
+                    },
+                    "dccSignature": {
+                        "description": "Cryptographic signature used to verify `dccQuote`.\n> This value only applies if you have implemented Dynamic Currency Conversion. For more information, [contact Support](https:\/\/support.adyen.com\/hc\/en-us\/requests\/new).",
+                        "type": "string"
+                    },
+                    "fraudResult": {
+                        "description": "The fraud result properties of the payment.",
+                        "type": ""
+                    },
+                    "issuerUrl": {
+                        "description": "The URL to direct the shopper to.\n> In case of SecurePlus, do not redirect a shopper to this URL.",
+                        "type": "string"
+                    },
+                    "md": {
+                        "description": "The payment session.",
+                        "type": "string"
+                    },
+                    "paRequest": {
+                        "description": "The 3D request data for the issuer.\n\nIf the value is **CUPSecurePlus-CollectSMSVerificationCode**, collect an SMS code from the shopper and pass it in the `\/authorise3D` request. For more information, see [3D Secure](https:\/\/docs.adyen.com\/classic-integration\/3d-secure).",
+                        "type": "string"
+                    },
+                    "pspReference": {
+                        "description": "Adyen's 16-character string reference associated with the transaction. This value is globally unique; quote it when communicating with us about this response.",
+                        "type": "string"
+                    },
+                    "refusalReason": {
+                        "description": "If the payment's authorisation is refused or an error occurs during authorisation, this field holds Adyen's mapped reason for the refusal or a description of the error.\n\nWhen a transaction fails, the authorisation response includes `resultCode` and `refusalReason` values.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result of the payment. Possible values:\n\n* **AuthenticationFinished** \u2013 The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.\n* **Authorised** \u2013 The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.\n* **Cancelled** \u2013 Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.\n* **ChallengeShopper** \u2013 The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Error** \u2013 There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.\n* **IdentifyShopper** \u2013 The issuer requires the shopper's device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Pending** \u2013 Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment. For more information on handling a pending payment, refer to [Payments with pending status](https:\/\/docs.adyen.com\/development-resources\/payments-with-pending-status).\n* **PresentToShopper** \u2013 Indicates that the response contains additional ",
+                        "type": "string"
+                    }
+                }
+            },
+            "dccAmount": {
+                "type": "object"
+            },
+            "fraudResult": {
+                "type": "object"
+            },
+            "SDKEphemPubKey": {
+                "type": "object",
+                "properties": {
+                    "crv": {
+                        "description": "The `crv` value as received from the 3D Secure 2 SDK.",
+                        "type": "string"
+                    },
+                    "kty": {
+                        "description": "The `kty` value as received from the 3D Secure 2 SDK.",
+                        "type": "string"
+                    },
+                    "x": {
+                        "description": "The `x` value as received from the 3D Secure 2 SDK.",
+                        "type": "string"
+                    },
+                    "y": {
+                        "description": "The `y` value as received from the 3D Secure 2 SDK.",
+                        "type": "string"
+                    }
+                }
+            },
+            "Split": {
+                "type": "object",
+                "properties": {
+                    "account": {
+                        "description": "The account name.",
+                        "type": "string"
+                    },
+                    "amount": {
+                        "description": "The amount information for the transaction. For [BIN or card verification](https:\/\/docs.adyen.com\/payment-methods\/cards\/bin-data-and-card-verification) requests, set amount to 0 (zero).",
+                        "type": ""
+                    },
+                    "description": {
+                        "description": "A description of this split.",
+                        "type": "string"
+                    },
+                    "reference": {
+                        "description": "The reference assigned to the forex quote request.",
+                        "type": "string"
+                    },
+                    "type": {
+                        "description": "The type of forex.",
+                        "type": "string"
+                    }
+                }
+            },
+            "SplitAmount": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "description": "The three-character [ISO currency code](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "string"
+                    },
+                    "value": {
+                        "description": "The payable amount that can be charged for the transaction.\n\nThe transaction amount needs to be represented in minor units according to the [following table](https:\/\/docs.adyen.com\/development-resources\/currency-codes).",
+                        "type": "integer"
+                    }
+                }
+            },
+            "StoreDetailAndSubmitRequest": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "amount": {
+                        "description": "The amount information for the transaction. For [BIN or card verification](https:\/\/docs.adyen.com\/payment-methods\/cards\/bin-data-and-card-verification) requests, set amount to 0 (zero).",
+                        "type": ""
+                    },
+                    "bank": {
+                        "description": "A container for bank account data.\n> This field is mandatory if `card` is not provided.",
+                        "type": ""
+                    },
+                    "billingAddress": {
+                        "description": "the address where to send the invoice",
+                        "type": ""
+                    },
+                    "card": {
+                        "description": "a representation of a (credit or debit) card",
+                        "type": ""
+                    },
+                    "dateOfBirth": {
+                        "description": "The shopper's date of birth.\n\nFormat [ISO-8601](https:\/\/www.w3.org\/TR\/NOTE-datetime): YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "entityType": {
+                        "description": "The type of the entity the payment is processed for.",
+                        "type": "string"
+                    },
+                    "fraudOffset": {
+                        "description": "An integer value that is added to the normal fraud score. The value can be either positive or negative.",
+                        "type": "integer"
+                    },
+                    "merchantAccount": {
+                        "description": "The merchant account identifier, with which you want to process the transaction.",
+                        "type": "string"
+                    },
+                    "nationality": {
+                        "description": "The two-character country code of the shopper's nationality.",
+                        "type": "string"
+                    },
+                    "recurring": {
+                        "description": "The recurring settings for the payment. Use this property when you want to enable [recurring payments](https:\/\/docs.adyen.com\/classic-integration\/recurring-payments).",
+                        "type": ""
+                    },
+                    "reference": {
+                        "description": "The reference assigned to the forex quote request.",
+                        "type": "string"
+                    },
+                    "selectedBrand": {
+                        "description": "Some payment methods require defining a value for this field to specify how to process the transaction.\n\nFor the Bancontact payment method, it can be set to:\n* `maestro` (default), to be processed like a Maestro card, or\n* `bcmc`, to be processed like a Bancontact card.",
+                        "type": "string"
+                    },
+                    "shopperEmail": {
+                        "description": "the email address of the person",
+                        "type": "string"
+                    },
+                    "shopperName": {
+                        "description": "the name of the person",
+                        "type": ""
+                    },
+                    "shopperReference": {
+                        "description": "The shopper's reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.",
+                        "type": "string"
+                    },
+                    "shopperStatement": {
+                        "description": "The text to appear on the shopper's bank statement.",
+                        "type": "string"
+                    },
+                    "socialSecurityNumber": {
+                        "description": "The shopper's social security number.",
+                        "type": "string"
+                    }
+                }
+            },
+            "bank": {
+                "type": "object"
+            },
+            "StoreDetailAndSubmitResponse": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "pspReference": {
+                        "description": "Adyen's 16-character string reference associated with the transaction. This value is globally unique; quote it when communicating with us about this response.",
+                        "type": "string"
+                    },
+                    "refusalReason": {
+                        "description": "If the payment's authorisation is refused or an error occurs during authorisation, this field holds Adyen's mapped reason for the refusal or a description of the error.\n\nWhen a transaction fails, the authorisation response includes `resultCode` and `refusalReason` values.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result of the payment. Possible values:\n\n* **AuthenticationFinished** \u2013 The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.\n* **Authorised** \u2013 The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.\n* **Cancelled** \u2013 Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.\n* **ChallengeShopper** \u2013 The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Error** \u2013 There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.\n* **IdentifyShopper** \u2013 The issuer requires the shopper's device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Pending** \u2013 Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment. For more information on handling a pending payment, refer to [Payments with pending status](https:\/\/docs.adyen.com\/development-resources\/payments-with-pending-status).\n* **PresentToShopper** \u2013 Indicates that the response contains additional ",
+                        "type": "string"
+                    }
+                }
+            },
+            "StoreDetailRequest": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "bank": {
+                        "description": "A container for bank account data.\n> This field is mandatory if `card` is not provided.",
+                        "type": ""
+                    },
+                    "billingAddress": {
+                        "description": "the address where to send the invoice",
+                        "type": ""
+                    },
+                    "card": {
+                        "description": "a representation of a (credit or debit) card",
+                        "type": ""
+                    },
+                    "dateOfBirth": {
+                        "description": "The shopper's date of birth.\n\nFormat [ISO-8601](https:\/\/www.w3.org\/TR\/NOTE-datetime): YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "entityType": {
+                        "description": "The type of the entity the payment is processed for.",
+                        "type": "string"
+                    },
+                    "fraudOffset": {
+                        "description": "An integer value that is added to the normal fraud score. The value can be either positive or negative.",
+                        "type": "integer"
+                    },
+                    "merchantAccount": {
+                        "description": "The merchant account identifier, with which you want to process the transaction.",
+                        "type": "string"
+                    },
+                    "nationality": {
+                        "description": "The two-character country code of the shopper's nationality.",
+                        "type": "string"
+                    },
+                    "recurring": {
+                        "description": "The recurring settings for the payment. Use this property when you want to enable [recurring payments](https:\/\/docs.adyen.com\/classic-integration\/recurring-payments).",
+                        "type": ""
+                    },
+                    "selectedBrand": {
+                        "description": "Some payment methods require defining a value for this field to specify how to process the transaction.\n\nFor the Bancontact payment method, it can be set to:\n* `maestro` (default), to be processed like a Maestro card, or\n* `bcmc`, to be processed like a Bancontact card.",
+                        "type": "string"
+                    },
+                    "shopperEmail": {
+                        "description": "the email address of the person",
+                        "type": "string"
+                    },
+                    "shopperName": {
+                        "description": "the name of the person",
+                        "type": ""
+                    },
+                    "shopperReference": {
+                        "description": "The shopper's reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.",
+                        "type": "string"
+                    },
+                    "socialSecurityNumber": {
+                        "description": "The shopper's social security number.",
+                        "type": "string"
+                    }
+                }
+            },
+            "StoreDetailResponse": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "pspReference": {
+                        "description": "Adyen's 16-character string reference associated with the transaction. This value is globally unique; quote it when communicating with us about this response.",
+                        "type": "string"
+                    },
+                    "recurringDetailReference": {
+                        "description": "The token which you can use later on for submitting the payout.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result of the payment. Possible values:\n\n* **AuthenticationFinished** \u2013 The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.\n* **Authorised** \u2013 The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.\n* **Cancelled** \u2013 Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.\n* **ChallengeShopper** \u2013 The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Error** \u2013 There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.\n* **IdentifyShopper** \u2013 The issuer requires the shopper's device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Pending** \u2013 Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment. For more information on handling a pending payment, refer to [Payments with pending status](https:\/\/docs.adyen.com\/development-resources\/payments-with-pending-status).\n* **PresentToShopper** \u2013 Indicates that the response contains additional ",
+                        "type": "string"
+                    }
+                }
+            },
+            "SubmitRequest": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "amount": {
+                        "description": "The amount information for the transaction. For [BIN or card verification](https:\/\/docs.adyen.com\/payment-methods\/cards\/bin-data-and-card-verification) requests, set amount to 0 (zero).",
+                        "type": ""
+                    },
+                    "dateOfBirth": {
+                        "description": "The shopper's date of birth.\n\nFormat [ISO-8601](https:\/\/www.w3.org\/TR\/NOTE-datetime): YYYY-MM-DD",
+                        "type": "string"
+                    },
+                    "entityType": {
+                        "description": "The type of the entity the payment is processed for.",
+                        "type": "string"
+                    },
+                    "fraudOffset": {
+                        "description": "An integer value that is added to the normal fraud score. The value can be either positive or negative.",
+                        "type": "integer"
+                    },
+                    "merchantAccount": {
+                        "description": "The merchant account identifier, with which you want to process the transaction.",
+                        "type": "string"
+                    },
+                    "nationality": {
+                        "description": "The two-character country code of the shopper's nationality.",
+                        "type": "string"
+                    },
+                    "recurring": {
+                        "description": "The recurring settings for the payment. Use this property when you want to enable [recurring payments](https:\/\/docs.adyen.com\/classic-integration\/recurring-payments).",
+                        "type": ""
+                    },
+                    "reference": {
+                        "description": "The reference assigned to the forex quote request.",
+                        "type": "string"
+                    },
+                    "selectedRecurringDetailReference": {
+                        "description": "The `recurringDetailReference` you want to use for this payment. The value `LATEST` can be used to select the most recently stored recurring detail.",
+                        "type": "string"
+                    },
+                    "shopperEmail": {
+                        "description": "the email address of the person",
+                        "type": "string"
+                    },
+                    "shopperName": {
+                        "description": "the name of the person",
+                        "type": ""
+                    },
+                    "shopperReference": {
+                        "description": "The shopper's reference to uniquely identify this shopper (e.g. user ID or account ID).\n> This field is required for recurring payments.",
+                        "type": "string"
+                    },
+                    "shopperStatement": {
+                        "description": "The text to appear on the shopper's bank statement.",
+                        "type": "string"
+                    },
+                    "socialSecurityNumber": {
+                        "description": "The shopper's social security number.",
+                        "type": "string"
+                    }
+                }
+            },
+            "SubmitResponse": {
+                "type": "object",
+                "properties": {
+                    "additionalData": {
+                        "description": "a map of name\/value pairs for passing in additional\/industry-specific data",
+                        "type": "object"
+                    },
+                    "pspReference": {
+                        "description": "Adyen's 16-character string reference associated with the transaction. This value is globally unique; quote it when communicating with us about this response.",
+                        "type": "string"
+                    },
+                    "refusalReason": {
+                        "description": "If the payment's authorisation is refused or an error occurs during authorisation, this field holds Adyen's mapped reason for the refusal or a description of the error.\n\nWhen a transaction fails, the authorisation response includes `resultCode` and `refusalReason` values.",
+                        "type": "string"
+                    },
+                    "resultCode": {
+                        "description": "The result of the payment. Possible values:\n\n* **AuthenticationFinished** \u2013 The payment has been successfully authenticated with 3D Secure 2. Returned for 3D Secure 2 authentication-only transactions.\n* **Authorised** \u2013 The payment was successfully authorised. This state serves as an indicator to proceed with the delivery of goods and services. This is a final state.\n* **Cancelled** \u2013 Indicates the payment has been cancelled (either by the shopper or the merchant) before processing was completed. This is a final state.\n* **ChallengeShopper** \u2013 The issuer requires further shopper interaction before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Error** \u2013 There was an error when the payment was being processed. The reason is given in the `refusalReason` field. This is a final state.\n* **IdentifyShopper** \u2013 The issuer requires the shopper's device fingerprint before the payment can be authenticated. Returned for 3D Secure 2 transactions.\n* **Pending** \u2013 Indicates that it is not possible to obtain the final status of the payment. This can happen if the systems providing final status information for the payment are unavailable, or if the shopper needs to take further action to complete the payment. For more information on handling a pending payment, refer to [Payments with pending status](https:\/\/docs.adyen.com\/development-resources\/payments-with-pending-status).\n* **PresentToShopper** \u2013 Indicates that the response contains additional ",
+                        "type": "string"
+                    }
+                }
+            },
+            "deviceRenderOptions": {
+                "type": "object"
+            },
+            "sdkEphemPubKey": {
+                "type": "object"
+            },
+            "ThreeDSecureData": {
+                "type": "object",
+                "properties": {
+                    "authenticationResponse": {
+                        "description": "In 3D Secure 1, the authentication response if the shopper was redirected.\n\nIn 3D Secure 2, this is the `transStatus` from the challenge result. If the transaction was frictionless, set this value to **Y**.",
+                        "type": "string"
+                    },
+                    "cavv": {
+                        "description": "The cardholder authentication value (base64 encoded, 20 bytes in a decoded form).",
+                        "type": "string"
+                    },
+                    "cavvAlgorithm": {
+                        "description": "The CAVV algorithm used. Include this only for 3D Secure 1.",
+                        "type": "string"
+                    },
+                    "directoryResponse": {
+                        "description": "In 3D Secure 1, this is the enrollment response from the 3D directory server.\n\nIn 3D Secure 2, this is the `transStatus` from the `ARes`. The possible values are **A** or **Y** for a frictionless flow, or **C** for a challenge flow.",
+                        "type": "string"
+                    },
+                    "dsTransID": {
+                        "description": "Supported for 3D Secure 2. The unique transaction identifier assigned by the Directory Server (DS) to identify a single transaction.",
+                        "type": "string"
+                    },
+                    "eci": {
+                        "description": "The electronic commerce indicator.",
+                        "type": "string"
+                    },
+                    "threeDSVersion": {
+                        "description": "The version of the 3D Secure protocol.",
+                        "type": "string"
+                    },
+                    "xid": {
+                        "description": "Supported for 3D Secure 1. The transaction identifier (Base64-encoded, 20 bytes in a decoded form).",
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
