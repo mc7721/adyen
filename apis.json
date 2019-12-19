@@ -1,0 +1,228 @@
+{
+    "name": "Adyen",
+    "description": "We provide a single payments platform globally to accept payments and grow revenue online, on mobile, and at the point of sale.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+    "tags": [
+        "api provider",
+        "businesses",
+        "commerce",
+        "compliance",
+        "ecommerce",
+        "financial services",
+        "have api",
+        "have openapi",
+        "have swagger",
+        "payments",
+        "profile",
+        "psd2"
+    ],
+    "created": "2019-12-18",
+    "modified": "2019-12-18",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/adyen\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Adyen Payment API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-payment-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen Recurring API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-recurring-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen Payout API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-payout-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen MarketPay Account API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-marketpay-account-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen MarketPay Fund API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-marketpay-fund-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen MarketPay Notification Configuration API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-marketpay-notification-configuration-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen BinLookup API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-binlookup-api-openapi.json"
+                }
+            ]
+        },
+        {
+            "name": "Adyen Checkout API",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/2170-adyen.jpg",
+            "humanURL": "http:\/\/www.adyen.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/adyen-checkout-api-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "API Definitions",
+            "url": "https:\/\/github.com\/Adyen\/adyen-openapi"
+        },
+        {
+            "type": "Blog",
+            "url": "https:\/\/www.adyen.com\/blog"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/adyen"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/adyen"
+        },
+        {
+            "type": "Documentation",
+            "url": "https:\/\/docs.adyen.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "complaints@adyen.com"
+        },
+        {
+            "type": "Email",
+            "url": "press@adyen.com"
+        },
+        {
+            "type": "Email",
+            "url": "germany@adyen.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/adyenpayments"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-43-41.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-43-46.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-43-53.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-16-01-13.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-44-05.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-44-47.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-44-53.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-42-34.json"
+        },
+        {
+            "type": "Swagger",
+            "url": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-definitions\/swagger\/2170-2019-09-03-14-42-41.json"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.adyen.com\/pricing"
+        },
+        {
+            "type": "Terms of service",
+            "url": "https:\/\/www.adyen.com\/legal\/terms-and-conditions"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/Adyen"
+        },
+        {
+            "type": "Website",
+            "url": "http:\/\/www.adyen.com\/"
+        }
+    ]
+}
