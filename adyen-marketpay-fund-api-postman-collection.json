@@ -1,5 +1,5 @@
 {
-    "id": "a0637c29539f44189cbb6a573ccfa81c",
+    "id": "15d68ce301e553a74bc09368d9c95562",
     "name": "Adyen MarketPay Fund API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "ff8f28d1a7f116c3de99db7a70da1175",
+            "id": "10690a019b792bc4317da60f375f799d",
             "name": "Retrieve the balance(s) of an account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/accountHolderBalance",
             "description": "This endpoint is used to retrieve the balance(s) of the accounts of an account holder. An account's balances are on a per-currency basis (i.e., an account may have multiple balances: one per currency).",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         },
         {
-            "id": "4d70ffc9a4a42150b86a081116688b2b",
+            "id": "9839972b49c2c65728c6c74fbf08f4ee",
             "name": "Retrieve a list of transactions.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/accountHolderTransactionList",
             "description": "This endpoint is used to retrieve a list of Transactions for an account holder's accounts. The accounts and Transaction Statuses to be included on the list can be specified. Each call will return a maximum of fifty (50) Transactions per account; in order to retrieve the following set of Transactions another call should be made with the 'page' value incremented. Note that Transactions are ordered with most recent first.",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         },
         {
-            "id": "a7518d8b290ec2efab5a7b065b11d930",
+            "id": "0079dd4f2a15bf423671237df2b1c108",
             "name": "Disburse a specified amount from an account to the account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/payoutAccountHolder",
             "description": "This endpoint is used to pay out a specified amount from an account to the bank account of the account's account holder.",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         },
         {
-            "id": "fe9544baa560ec02bc77dfee82c2d366",
+            "id": "82a93d2a35b59b4b3dc4ec22913969f6",
             "name": "Make a refund of the existing transfer funds transfer.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/refundFundsTransfer",
             "description": "This endpoint is used to refund funds from one account to another account. Both accounts must be in the same marketplace, but can have different account holders. ",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         },
         {
-            "id": "5e4b73adcd6623b30dba0861901d3150",
+            "id": "8084fda99684987e7d700e417b1714f4",
             "name": "Refund all transactions of an account since the most recent payout.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/refundNotPaidOutTransfers",
             "description": "This endpoint is used to refund all the transactions of an account which have taken place since the most recent payout. This request is on a per-account basis (as opposed to a per-payment basis), so only the portion of the payment which was made to the specified account will be refunded. The commission(s), fee(s), and payment(s) to other account(s), will remain in the accounts to which they were sent as designated by the original payment's split details.",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         },
         {
-            "id": "0bbb29f7e358596afbf8c55a61d6c2ef",
+            "id": "19e3f479252fd42a64b58960faf7d063",
             "name": "Designate an account to be the beneficiary of a separate account and transfer the benefactor's current balance to the beneficiary.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/setupBeneficiary",
             "description": "This endpoint is used to define a benefactor and a beneficiary relationship between two accounts. At the time of benefactor\/beneficiary setup, the funds in the benefactor account are transferred to the beneficiary account, and any further payments to the benefactor account are automatically sent to the beneficiary account. Note that a series of benefactor\/beneficiaries may not exceed four (4) beneficiaries and may not have a cycle in it.",
@@ -144,11 +144,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         },
         {
-            "id": "c93c45a6435718192847e90358aabf37",
+            "id": "f46c3e33a4ddc7e942011916c48a4a32",
             "name": "Transfer funds from one platform account to another.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Fund\/v5\/transferFunds",
             "description": "This endpoint is used to transfer funds from one account to another account. Both accounts must be in the same marketplace, but can have different account holders. The transfer must include a transfer code, which should be determined by the marketplace, in compliance with local regulations.",
@@ -167,7 +167,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a0637c29539f44189cbb6a573ccfa81c",
+            "collectionId": "15d68ce301e553a74bc09368d9c95562",
             "rawModeData": ""
         }
     ]
