@@ -1,5 +1,5 @@
 {
-    "id": "5aa5853416bc89197bf06038236e79c4",
+    "id": "63d2afbf24e2504e84eb5c71b6518078",
     "name": "Adyen Checkout API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "bb67b55f551509038c162fa1c66cb245",
+            "id": "9822cbdba2591466704672521418679d",
             "name": "Creates a payment link.",
             "url": "https:\/\/checkout-test.adyen.com\/v51\/paymentLinks",
             "description": "Creates a payment link to our hosted payment form where shoppers can pay. The list of payment methods presented to the shopper depends on the `currency` and `country` parameters sent in the request.\n\nFor more information, refer to [Pay by Link documentation](https:\/\/docs.adyen.com\/checkout\/pay-by-link#create-payment-links-through-api).",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5aa5853416bc89197bf06038236e79c4",
+            "collectionId": "63d2afbf24e2504e84eb5c71b6518078",
             "rawModeData": ""
         },
         {
-            "id": "fda8fec3117b6377697700c3650ee24d",
+            "id": "d24f5264d6b4e8ee1130adee2be53f19",
             "name": "Returns available payment methods.",
             "url": "https:\/\/checkout-test.adyen.com\/v51\/paymentMethods",
             "description": "Queries the available payment methods for a transaction based on the transaction context (like amount, country, and currency). Besides giving back a list of the available payment methods, the response also returns which input details you need to collect from the shopper (to be submitted to `\/payments`).\n\nAlthough we highly recommend using this endpoint to ensure you are always offering the most up-to-date list of payment methods, its usage is optional. You can, for example, also cache the `\/paym",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5aa5853416bc89197bf06038236e79c4",
+            "collectionId": "63d2afbf24e2504e84eb5c71b6518078",
             "rawModeData": ""
         },
         {
-            "id": "dd870ba0d2d85b174fc5dfdaec2402c8",
+            "id": "aa78599fa01ac95456dd553923d27395",
             "name": "Creates a payment session.",
             "url": "https:\/\/checkout-test.adyen.com\/v51\/paymentSession",
             "description": "Provides the data object that can be used to start the Checkout SDK. To set up the payment, pass its amount, currency, and other required parameters. We use this to optimise the payment flow and perform better risk assessment of the transaction.\n\nFor more information, refer to [How it works](https:\/\/docs.adyen.com\/checkout#howitworks).",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5aa5853416bc89197bf06038236e79c4",
+            "collectionId": "63d2afbf24e2504e84eb5c71b6518078",
             "rawModeData": ""
         },
         {
-            "id": "3c7746a7eac40228ed6953c2cdbd4f8c",
+            "id": "5a0b59274010ae0b001a8e386c9e3cfe",
             "name": "Starts a transaction.",
             "url": "https:\/\/checkout-test.adyen.com\/v51\/payments",
             "description": "Sends payment parameters (like amount, country, and currency) together with the input details collected from the shopper. The response returns the result of the payment request:\n* For some payment methods (e.g. Visa, Mastercard, and SEPA Direct Debits) you'll get a final state in the `resultCode` (e.g. `authorised` or `refused`).\n* For other payment methods, you'll receive `redirectShopper` as `resultCode` together with a `redirectUrl`. In this case, the shopper must finalize the payment on the ",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5aa5853416bc89197bf06038236e79c4",
+            "collectionId": "63d2afbf24e2504e84eb5c71b6518078",
             "rawModeData": ""
         },
         {
-            "id": "edb28ae221fd532b229e101cfa6a7ebe",
+            "id": "0812025ce37d925428908befff50e39c",
             "name": "Submits details for a payment.",
             "url": "https:\/\/checkout-test.adyen.com\/v51\/payments\/details",
             "description": "Submits details for a payment created using `\/payments`. This step is only needed when no final state has been reached on the `\/payments` request (for example for 3D Secure, or when getting redirected back directly from a payment method using an app switch).\n\nThe exact details, which need to be sent to this endpoint, are always specified in the response of the associated `\/payments` request.\n\nIn addition, the endpoint can be used to verify a `payload`, which is returned after coming back from th",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5aa5853416bc89197bf06038236e79c4",
+            "collectionId": "63d2afbf24e2504e84eb5c71b6518078",
             "rawModeData": ""
         },
         {
-            "id": "1ec0b8a3ac18e1422274cf1864e9385a",
+            "id": "f178847bfe15c92ad91d89b1c61a5ac6",
             "name": "Verifies payment result.",
             "url": "https:\/\/checkout-test.adyen.com\/v51\/payments\/result",
             "description": "Verifies the payment result using the payload returned from the Checkout SDK.\n\nFor more information, refer to [How it works](https:\/\/docs.adyen.com\/checkout#howitworks).",
@@ -144,7 +144,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "5aa5853416bc89197bf06038236e79c4",
+            "collectionId": "63d2afbf24e2504e84eb5c71b6518078",
             "rawModeData": ""
         }
     ]
