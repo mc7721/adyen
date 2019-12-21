@@ -1,5 +1,5 @@
 {
-    "id": "a79c9e2ff498f9951f0e7cc4303e97c6",
+    "id": "5e2fe6aa6be6247c2177df6a987dd263",
     "name": "Adyen MarketPay Account API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "4a3a92eea2e6a4e7b2c0d3dd3b3d682f",
+            "id": "dc80e4fe6d5a966dc9cbaea5a0aade10",
             "name": "Request to perform verification for an account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/checkAccountHolder",
             "description": "This endpoint allows to trigger the verification of the account holder earlier than it's required by the currently processed volume.",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "1edc9642f0ccdccda4109ac699f547ab",
+            "id": "9d835bad9c582fe486d5651b25a53656",
             "name": "Close an existing account under an account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/closeAccount",
             "description": "This endpoint is used to close an existing account under an account holder. If an account is closed, it may not process transactions or have its funds paid out,and it may not be reopened. Any payments made to a closed account will be directed to the merchant's liable account.",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "f8cae0d9e1996a869f527941ee0ae1c7",
+            "id": "59dfc8e71df1e58294924d658cb97150",
             "name": "Close an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/closeAccountHolder",
             "description": "This endpoint is used to close an existing account holder and its accounts. If an account holder is closed, it may not process transactions or pay out funds, and it may not be reopened. Any payments made to a closed account will be directed to the merchant's liable account.",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "1dd017cbd6f8f242c6e1e7a4c3c8728b",
+            "id": "49ad65b19a9938a4541c60ba8ff89c6c",
             "name": "Create a new account under an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/createAccount",
             "description": "This endpoint is used to create an account under an existing account holder. An account holder may have multiple accounts.",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "54e301f378eb0af1b5c3c5a2c993257e",
+            "id": "796e76fd16bd432c0c8ff071b40f649a",
             "name": "Create a new account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/createAccountHolder",
             "description": "This endpoint is used to create an account holder. Each account holder represents a single sub-merchant, and each sub-merchant must be represented by an account holder. Depending on the legal entity type, different details are required to be provided in the call to this endpoint.",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "64539088b083f4625f473364f98c8f91",
+            "id": "1a94fbd9683bd8245f696f5b8a547e6f",
             "name": "Delete bank accounts of an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/deleteBankAccounts",
             "description": "This endpoint is used to delete existing bank accounts from an account holder. For this, pass the `accountHolderCode` you got on the account holder creation, and one or more `bankAccountUUIDs` specifying bank accounts to delete.",
@@ -144,11 +144,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "3e7094f725f09ed3f9af9553160f8e9c",
+            "id": "a622c11b217b30b4ce300d6119d566dc",
             "name": "Delete payout methods of an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/deletePayoutMethods",
             "description": "This endpoint is used to delete existing payout method from an account holder. For this, pass the `accountHolderCode` you got on the account holder creation, and one or more `payoutMethodCodes` specifying payout methods to delete.",
@@ -167,11 +167,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "03647e2d771a2d3cf60a6583fd8a4fc4",
+            "id": "2b5a19e5b66d1764714d7f0b89609db7",
             "name": "Delete shareholders of an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/deleteShareholders",
             "description": "This endpoint is used to delete existing shareholders from an account holder.",
@@ -190,11 +190,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "d4206844e40c8ac39466af3614abf2a9",
+            "id": "bb9c8cfbb574916556d9cf8f1744390c",
             "name": "Retrieve the details of an account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/getAccountHolder",
             "description": "This endpoint is used to retrieve the details of an account holder.",
@@ -213,11 +213,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "ca2e431c85603d48018aa511310bf6bb",
+            "id": "b65477f61bf86e976a201a28588b173e",
             "name": "Retrieve the uploaded documents of an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/getUploadedDocuments",
             "description": "This endpoint is used to retrieve documents previously uploaded for use in the KYC Verification of an account holder.\n\nFor further information regarding KYC Verification, please refer to [Verification checks](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
@@ -236,11 +236,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "b6e80d64209f4d06e984c3ae3c4a5bec",
+            "id": "9bafd958dbb722befe1ceb7de5596d34",
             "name": "Suspend an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/suspendAccountHolder",
             "description": "This endpoint is used to suspend an existing account holder. If an account holder is suspended, it may not process transactions or pay out funds. Any payments made to a suspended account holder will be directed to the merchant's liable account.",
@@ -259,11 +259,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "ed679954b199c20f235aa53bb2694d70",
+            "id": "a13f8f348581439e2aeeb05aef9e40f9",
             "name": "Reinstate a disabled account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/unSuspendAccountHolder",
             "description": "This endpoint is used to reinstate an existing account holder, which has been suspended through the `\/suspendAccountHolder` endpoint. An account holder which has been suspended due to KYC verification issues cannot be reinstated through this endpoint.",
@@ -282,11 +282,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "3d335363704db961191172efb67a37fe",
+            "id": "d0bf4632506ea8f38551dd0b561980d5",
             "name": "Update an existing account under an account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/updateAccount",
             "description": "This endpoint is used to update the description or payout schedule of an existing account.",
@@ -305,11 +305,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "e5f12e960619ee8312c0b8039f712733",
+            "id": "801e4679189107483d96569caa2f9702",
             "name": "Update an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/updateAccountHolder",
             "description": "This endpoint is used to update the `accountHolderDetails` or `processingTier` of an account holder.\n\nIf updating the `accountHolderDetails`, only the details which have been provided will be updated. Other details will be left as-is with the exception of the following fields:\n* `accountHolderDetails.address`\n* `accountHolderDetails.fullPhoneNumber`\n* `accountHolderDetails.bankAccountDetails.BankAccountDetail`\n* `accountHolderDetails.businessDetails.shareholders.ShareholderContact`, which requir",
@@ -328,11 +328,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "c6c161e1b52d19d5f2b6f173c5a5c790",
+            "id": "859c713abaeab9bd02bcbd0dae276378",
             "name": "Update the state of an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/updateAccountHolderState",
             "description": "This endpoint is used to disable or enable the processing or payout state of an account holder. It cannot be used to enable an account holder whose processing or payout state has not been disabled through this endpoint.\n\nFor further information regarding processing and payout states of an account holder, please refer to the [MarketPay documentation](https:\/\/docs.adyen.com\/marketpay).",
@@ -351,11 +351,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         },
         {
-            "id": "6921b81e33e22fc4473f9eb466ff582f",
+            "id": "6b10a8deef8a58e5006689cfb7b23f87",
             "name": "Upload a document for an existing account holder.",
             "url": "https:\/\/cal-test.adyen.com\/cal\/services\/Account\/v5\/uploadDocument",
             "description": "This endpoint is used to upload a document for use in the KYC verification of an account holder.\n\nFor further information regarding KYC Verification, please refer to [Verification checks](https:\/\/docs.adyen.com\/marketpay\/onboarding-and-verification\/verification-checks).",
@@ -374,7 +374,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "a79c9e2ff498f9951f0e7cc4303e97c6",
+            "collectionId": "5e2fe6aa6be6247c2177df6a987dd263",
             "rawModeData": ""
         }
     ]
