@@ -1,5 +1,5 @@
 {
-    "id": "8333efe2af6610cf930abe1680ffceb9",
+    "id": "85b619d7680bf30e4fc18f8c048f719a",
     "name": "Adyen Payment API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "2e52df421a879b46fbd04fe1112060fb",
+            "id": "b6e45b1dcb61b1085ae7d8994a0c0ea0",
             "name": "Increases or decreases the authorised amount.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/adjustAuthorisation",
             "description": "Allows you to increase or decrease the authorised amount after the initial authorisation has taken place. This functionality enables tipping, improving the chances your authorisation will be valid, charging the shopper when they have already left the merchant premises, etc.\n\nFor more information, refer to [Adjust Authorisation](https:\/\/docs.adyen.com\/checkout\/adjust-authorisation).",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "792274b6adb7bcfc0118a375632aa3a0",
+            "id": "f37046f76335508bbc6aeda2ec0c575e",
             "name": "Creates a payment authorisation.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/authorise",
             "description": "Creates a payment with a unique reference (`pspReference`) and attempts to obtain an authorisation hold. For cards, this amount can be captured or cancelled later. Non-card payment methods typically don't support this and will automatically capture as part of the authorisation.\n\nFor more information, refer to [Classic integration](https:\/\/docs.adyen.com\/classic-integration).",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "af193a490c55afda89a4bf8e4588d942",
+            "id": "eba4a5e04920e978bb9a52704487e172",
             "name": "Completes a 3D Secure payment authorisation.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/authorise3d",
             "description": "For an authenticated 3D Secure session, completes the payment authorisation. This endpoint must receive the `md` and `paResponse` parameters that you get from the card issuer after a shopper pays via 3D Secure.\n\nFor more information, refer to [3D Secure](https:\/\/docs.adyen.com\/classic-integration\/3d-secure).",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "5cb874379a9a4ace85af04e27344c5cd",
+            "id": "938f479a84ba856b40760fa6af3ab2cd",
             "name": "Completes a 3D Secure 2 payment authorisation.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/authorise3ds2",
             "description": "For an authenticated 3D Secure 2 session, completes the payment authorisation. This endpoint must receive the `threeDS2Token` and `threeDS2Result` parameters.\n\nFor more information, refer to [3D Secure 2](https:\/\/docs.adyen.com\/checkout\/3d-secure\/native-3ds2).",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "ebbdcd77e9df946ffa8b310177b426aa",
+            "id": "8096527cb51d7dcd4508585cf8a7ded3",
             "name": "Cancels an authorised payment.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/cancel",
             "description": "Cancels the authorisation hold on a payment, returning a unique reference for this request. You can cancel payments after authorisation only for payment methods that support distinct authorisations and captures.\n\nFor more information, refer to [Cancel](https:\/\/docs.adyen.com\/checkout\/cancel).",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "1628677194363c94bc282798ce5aa045",
+            "id": "b6e0c06ab5262c53159ef1635b181b5f",
             "name": "Cancels or refunds a payment.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/cancelOrRefund",
             "description": "Cancels a payment if it has not been captured yet, or refunds it if it has already been captured. This is useful when it is not certain if the payment has been captured or not (for example, when using auto-capture).\n\n> Do not use this request for payments that involve (multiple) partial captures.\n\nFor more information, refer to [Cancel or refund](https:\/\/docs.adyen.com\/checkout\/cancel-or-refund).",
@@ -144,11 +144,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "97dd2c732214adc2f9aefcb7d38f188f",
+            "id": "c2235e8c33053280308de04c92562d0a",
             "name": "Captures an authorised payment.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/capture",
             "description": "Captures the authorisation hold on a payment, returning a unique reference for this request. Usually the full authorisation amount is captured, however it's also possible to capture a smaller amount, which results in cancelling the remaining authorisation balance.\n\nPayment methods, which automatically capture as part of authorisation, don't need to be captured, but submitting a capture request on these transactions will not result in double charges. If immediate or delayed auto-capture is enable",
@@ -167,11 +167,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "a3f546396928ad90f219770a2d531f42",
+            "id": "a855f04f931a283fc7c671a659563c1b",
             "name": "Return the authentication result after doing a 3D Secure authentication only.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/getAuthenticationResult",
             "description": "Return the authentication result after doing a 3D Secure authentication only.",
@@ -190,11 +190,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "654a6f5675ae435ca8786fa4d4990880",
+            "id": "b7ec9f6111923b0f303d194e703d55d3",
             "name": "Refunds a captured payment.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/refund",
             "description": "Refunds a payment that has previously been captured, returning a unique reference for this request. Refunding can be done on the full captured amount or a partial amount. Multiple (partial) refunds will be accepted as long as their sum doesn't exceed the captured amount. Payments which have been authorised, but not captured, cannot be refunded, use the \/cancel method instead.\n\n> Some payment methods\/gateways do not support partial\/multiple refunds.\n> A margin above the captured limit can be conf",
@@ -213,11 +213,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "472b88d5d6ceafc150a92d628024d123",
+            "id": "bc1e6df52a3e67119db0b2590f20396f",
             "name": "Retrieves the `threeDS2Result` after doing a 3D Secure 2 authentication only.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/retrieve3ds2Result",
             "description": "Retrieves the `threeDS2Result` after doing a 3D Secure 2 authentication only.",
@@ -236,11 +236,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "3ba7c9687fef27e266346bb6b4dfcf7e",
+            "id": "65fcd7a49c1ef297cb7ba693a78ba490",
             "name": "Cancels a payment using your custom reference.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/technicalCancel",
             "description": "This endpoint allows you to cancel a payment if you do not have the PSP reference of the original payment request available.\n\nIn your call, refer to the original payment by using the `reference` that you specified in your payment request.\n\nFor more information, see [Technical cancel](https:\/\/docs.adyen.com\/checkout\/cancel#technical-cancel).",
@@ -259,11 +259,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         },
         {
-            "id": "f1cd6c7f42a0ea503402b5376c11b85c",
+            "id": "7c692250bed6784f2532795a2e21653e",
             "name": "Cancels a POS refund request before it has been completed.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payment\/v51\/voidPendingRefund",
             "description": "This endpoint allows you to cancel the refund request before it has been completed.\n\nIn your call, you can refer to the original refund request either by using the `tenderReference`, or the `pspReference`. We recommend implementing based on the `tenderReference`, as this is generated for both offline and online transactions.\n\nFor more information, refer to [Cancel a refund](https:\/\/docs.adyen.com\/point-of-sale\/refund-payment\/cancel-a-pos-refund-request).",
@@ -282,7 +282,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "8333efe2af6610cf930abe1680ffceb9",
+            "collectionId": "85b619d7680bf30e4fc18f8c048f719a",
             "rawModeData": ""
         }
     ]
