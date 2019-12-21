@@ -1,5 +1,5 @@
 {
-    "id": "ca80c3573a5def64f340bff3176a3785",
+    "id": "c958381558c2900632b6eaa2503fe3c1",
     "name": "Adyen Payout API",
     "description": null,
     "auth": null,
@@ -10,7 +10,7 @@
     "folders": [],
     "requests": [
         {
-            "id": "7e742be66a62bec7267c553d90548adf",
+            "id": "b9b621bbe2f3ffb2b3ee1c76a3a93011",
             "name": "Confirms a payout.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51\/confirmThirdParty",
             "description": "Confirms a previously submitted payout.\n\nTo cancel a payout, use the `\/declineThirdParty` endpoint.",
@@ -29,11 +29,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ca80c3573a5def64f340bff3176a3785",
+            "collectionId": "c958381558c2900632b6eaa2503fe3c1",
             "rawModeData": ""
         },
         {
-            "id": "828e367070c014bac8e94fb269c0ba31",
+            "id": "8800dd735c926f8f8aeb027e8a25398d",
             "name": "Cancels a payout.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51\/declineThirdParty",
             "description": "Cancels a previously submitted payout.\n\nTo confirm and send a payout, use the `\/confirmThirdParty` endpoint.",
@@ -52,11 +52,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ca80c3573a5def64f340bff3176a3785",
+            "collectionId": "c958381558c2900632b6eaa2503fe3c1",
             "rawModeData": ""
         },
         {
-            "id": "8b5962bad565770ab52a4b1910b67995",
+            "id": "9e5ea9b4a2f4be14bce2fb2314ed57c3",
             "name": "Pay out directly.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51\/payout",
             "description": "With this call, you can pay out to your customers, and funds will be made available within 30 minutes on the cardholder's bank account (this is dependent on whether the issuer supports this functionality). Instant card payouts are only supported for Visa and Mastercard cards.",
@@ -75,11 +75,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ca80c3573a5def64f340bff3176a3785",
+            "collectionId": "c958381558c2900632b6eaa2503fe3c1",
             "rawModeData": ""
         },
         {
-            "id": "3f66c52f46b1176b5ef5c9717529c70f",
+            "id": "1d3e53ef1ba7873e60cea3967c9957ff",
             "name": "Stores payout details.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51\/storeDetail",
             "description": "Stores payment details under the `PAYOUT` recurring contract. These payment details can be used later to submit a payout via the `\/submitThirdParty` call.",
@@ -98,11 +98,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ca80c3573a5def64f340bff3176a3785",
+            "collectionId": "c958381558c2900632b6eaa2503fe3c1",
             "rawModeData": ""
         },
         {
-            "id": "c2abc3094feea1c08a8cb4a2966203c0",
+            "id": "12be6e5c605a8132222491a2a25ebdef",
             "name": "Stores details and submits a payout.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51\/storeDetailAndSubmitThirdParty",
             "description": "Submits a payout and stores its details for subsequent payouts.\n\nThe submitted payout must be confirmed or declined either by a reviewer or via `\/confirmThirdParty` or `\/declineThirdParty` calls.",
@@ -121,11 +121,11 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ca80c3573a5def64f340bff3176a3785",
+            "collectionId": "c958381558c2900632b6eaa2503fe3c1",
             "rawModeData": ""
         },
         {
-            "id": "142627e60457019dc652253e750749f4",
+            "id": "60f24547ed1149c9a3c3465c6879f259",
             "name": "Submits a payout.",
             "url": "https:\/\/pal-test.adyen.com\/pal\/servlet\/Payout\/v51\/submitThirdParty",
             "description": "Submits a payout using the previously stored payment details. To store payment details, use the `\/storeDetail` API call.\n\nThe submitted payout must be confirmed or declined either by a reviewer or via `\/confirmThirdParty` or `\/declineThirdParty` calls.",
@@ -144,7 +144,7 @@
             "responses": [],
             "currentHelper": null,
             "helperAttributes": null,
-            "collectionId": "ca80c3573a5def64f340bff3176a3785",
+            "collectionId": "c958381558c2900632b6eaa2503fe3c1",
             "rawModeData": ""
         }
     ]
